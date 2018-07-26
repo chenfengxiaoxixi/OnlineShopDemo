@@ -11,7 +11,6 @@
 @interface CFPersonalCenterController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UIImageView *bgImageView;
-    UIView *header;
 }
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -44,19 +43,28 @@
     }
     
     bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,-200, Main_Screen_Width, 200)];
-    bgImageView.userInteractionEnabled = YES;
+
     //bgImageView.contentMode = UIViewContentModeScaleAspectFill;//添加了这个属性表示等比例缩放，否则只缩放高度
     bgImageView.image = [UIImage imageNamed:@"advertisement_1"];
     [_tableView addSubview:bgImageView];
     
-    //其他控件也可以添加到_tableView的空白处，随tableview和伸缩动画联动
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20,-100,100, 30)];
-    label.backgroundColor = kRedColor;
-    [_tableView addSubview:label];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, -70, 60, 60)];
+    imageView.image = [UIImage imageNamed:@"user_image"];
+    imageView.backgroundColor = kWhiteColor;
+    [_tableView addSubview:imageView];
     
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(20,-150,100, 20)];
-    label2.backgroundColor = kBlackColor;
-    [_tableView addSubview:label2];
+    imageView.layer.masksToBounds = YES;
+    imageView.layer.cornerRadius = 30;
+    imageView.layer.borderColor = KLineGrayColor.CGColor;
+    imageView.layer.borderWidth = 1;
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(90, -40, 100, 20)];
+    label.backgroundColor = kWhiteColor;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.textColor = KDarkTextColor;
+    label.font = SYSTEMFONT(16);
+    label.text = @"黄金脆皮鱼";
+    [_tableView addSubview:label];
     
 }
 
