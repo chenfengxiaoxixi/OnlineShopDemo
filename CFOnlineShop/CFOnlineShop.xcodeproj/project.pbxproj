@@ -13,6 +13,8 @@
 		0C4754FA21006E0A007DC738 /* CFRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4754F921006E0A007DC738 /* CFRefreshHeader.m */; };
 		0C4754FD21008BCA007DC738 /* CFDetailInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C4754FC21008BCA007DC738 /* CFDetailInfoController.m */; };
 		0C79152721095E0A00D23547 /* CFShoppingCartHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C79152621095E0A00D23547 /* CFShoppingCartHeaderView.m */; };
+		0C79152D2109BDBE00D23547 /* CFTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7915292109BDBE00D23547 /* CFTabBarItem.m */; };
+		0C79152E2109BDBE00D23547 /* CFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C79152A2109BDBE00D23547 /* CFTabBarController.m */; };
 		0C80ACAE21018A3800703876 /* LPSemiModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C80ACAD21018A3800703876 /* LPSemiModalView.m */; };
 		0C80ACB22101A92D00703876 /* CFSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C80ACB12101A92D00703876 /* CFSegmentedControl.m */; };
 		0C80ACB52101C1A800703876 /* CFDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C80ACB42101C1A800703876 /* CFDetailView.m */; };
@@ -24,13 +26,11 @@
 		0CCF566A20FED2F900B8FE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCF566920FED2F900B8FE09 /* Assets.xcassets */; };
 		0CCF566D20FED2F900B8FE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCF566B20FED2F900B8FE09 /* LaunchScreen.storyboard */; };
 		0CCF567020FED2F900B8FE09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF566F20FED2F900B8FE09 /* main.m */; };
-		0CCF569420FEE18300B8FE09 /* CFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF569220FEE18300B8FE09 /* CFTabBarController.m */; };
 		0CCF569820FEE27A00B8FE09 /* CFBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF569720FEE27A00B8FE09 /* CFBaseController.m */; };
 		0CCF569B20FEE2F800B8FE09 /* CFShoppingCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF569A20FEE2F800B8FE09 /* CFShoppingCartController.m */; };
 		0CCF569E20FEE37D00B8FE09 /* CFClassificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF569D20FEE37D00B8FE09 /* CFClassificationController.m */; };
 		0CCF56A120FEE3A200B8FE09 /* CFHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF56A020FEE3A200B8FE09 /* CFHomePageController.m */; };
 		0CCF56A420FEE46B00B8FE09 /* CFPersonalCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF56A320FEE46B00B8FE09 /* CFPersonalCenterController.m */; };
-		0CCF56A720FEE70C00B8FE09 /* CFTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF56A620FEE70C00B8FE09 /* CFTabBarItem.m */; };
 		0CCF56AF20FF139300B8FE09 /* CALayer+CFAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF56AE20FF139300B8FE09 /* CALayer+CFAnimation.m */; };
 		0CCF56B320FF291900B8FE09 /* UIColor+CFColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF56B120FF291900B8FE09 /* UIColor+CFColor.m */; };
 		0CCF56B720FF2ABA00B8FE09 /* CFHomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF56B620FF2ABA00B8FE09 /* CFHomeCollectionCell.m */; };
@@ -51,6 +51,10 @@
 		0C4754FC21008BCA007DC738 /* CFDetailInfoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFDetailInfoController.m; sourceTree = "<group>"; };
 		0C79152521095E0A00D23547 /* CFShoppingCartHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFShoppingCartHeaderView.h; sourceTree = "<group>"; };
 		0C79152621095E0A00D23547 /* CFShoppingCartHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFShoppingCartHeaderView.m; sourceTree = "<group>"; };
+		0C7915292109BDBE00D23547 /* CFTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTabBarItem.m; sourceTree = "<group>"; };
+		0C79152A2109BDBE00D23547 /* CFTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTabBarController.m; sourceTree = "<group>"; };
+		0C79152B2109BDBE00D23547 /* CFTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTabBarController.h; sourceTree = "<group>"; };
+		0C79152C2109BDBE00D23547 /* CFTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTabBarItem.h; sourceTree = "<group>"; };
 		0C80ACAC21018A3800703876 /* LPSemiModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPSemiModalView.h; sourceTree = "<group>"; };
 		0C80ACAD21018A3800703876 /* LPSemiModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPSemiModalView.m; sourceTree = "<group>"; };
 		0C80ACB02101A92D00703876 /* CFSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFSegmentedControl.h; sourceTree = "<group>"; };
@@ -72,8 +76,6 @@
 		0CCF566C20FED2F900B8FE09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CCF566E20FED2F900B8FE09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CCF566F20FED2F900B8FE09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0CCF569220FEE18300B8FE09 /* CFTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTabBarController.m; sourceTree = "<group>"; };
-		0CCF569320FEE18300B8FE09 /* CFTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTabBarController.h; sourceTree = "<group>"; };
 		0CCF569620FEE27A00B8FE09 /* CFBaseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFBaseController.h; sourceTree = "<group>"; };
 		0CCF569720FEE27A00B8FE09 /* CFBaseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFBaseController.m; sourceTree = "<group>"; };
 		0CCF569920FEE2F800B8FE09 /* CFShoppingCartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFShoppingCartController.h; sourceTree = "<group>"; };
@@ -84,8 +86,6 @@
 		0CCF56A020FEE3A200B8FE09 /* CFHomePageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFHomePageController.m; sourceTree = "<group>"; };
 		0CCF56A220FEE46B00B8FE09 /* CFPersonalCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFPersonalCenterController.h; sourceTree = "<group>"; };
 		0CCF56A320FEE46B00B8FE09 /* CFPersonalCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFPersonalCenterController.m; sourceTree = "<group>"; };
-		0CCF56A520FEE70C00B8FE09 /* CFTabBarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFTabBarItem.h; sourceTree = "<group>"; };
-		0CCF56A620FEE70C00B8FE09 /* CFTabBarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFTabBarItem.m; sourceTree = "<group>"; };
 		0CCF56A820FEE7EA00B8FE09 /* MacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
 		0CCF56A920FEE90700B8FE09 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		0CCF56AD20FF139300B8FE09 /* CALayer+CFAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CFAnimation.h"; sourceTree = "<group>"; };
@@ -121,6 +121,17 @@
 				0C33B89B210707B600A18FD8 /* CFEditCollectionCell.m */,
 			);
 			path = CFEditCollectionCell;
+			sourceTree = "<group>";
+		};
+		0C7915282109BDBD00D23547 /* CFTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				0C7915292109BDBE00D23547 /* CFTabBarItem.m */,
+				0C79152A2109BDBE00D23547 /* CFTabBarController.m */,
+				0C79152B2109BDBE00D23547 /* CFTabBarController.h */,
+				0C79152C2109BDBE00D23547 /* CFTabBarItem.h */,
+			);
+			path = CFTabBarController;
 			sourceTree = "<group>";
 		};
 		0C80ACAB21018A3800703876 /* LPSemiModalView */ = {
@@ -180,8 +191,8 @@
 		0CCF567D20FEDD6E00B8FE09 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0C7915282109BDBD00D23547 /* CFTabBarController */,
 				0CCF569520FEE23800B8FE09 /* CFBaseController */,
-				0CCF569120FEE18300B8FE09 /* CFTabBarController */,
 				0CCF568C20FEE15F00B8FE09 /* CFShoppingCartController */,
 				0CCF568620FEE0BC00B8FE09 /* CFClassificationController */,
 				0CCF568720FEE0BC00B8FE09 /* CFHomePageController */,
@@ -262,18 +273,6 @@
 				0CA8CB5321085FF200DC7DF6 /* CFShoppingCartCell2.m */,
 			);
 			path = CFShoppingCartController;
-			sourceTree = "<group>";
-		};
-		0CCF569120FEE18300B8FE09 /* CFTabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				0CCF569320FEE18300B8FE09 /* CFTabBarController.h */,
-				0CCF569220FEE18300B8FE09 /* CFTabBarController.m */,
-				0CCF56A520FEE70C00B8FE09 /* CFTabBarItem.h */,
-				0CCF56A620FEE70C00B8FE09 /* CFTabBarItem.m */,
-			);
-			name = CFTabBarController;
-			path = ../../../CFTabBarController;
 			sourceTree = "<group>";
 		};
 		0CCF569520FEE23800B8FE09 /* CFBaseController */ = {
@@ -455,23 +454,23 @@
 				0C33B8982106C02E00A18FD8 /* CFClassificationCell.m in Sources */,
 				0C80ACB52101C1A800703876 /* CFDetailView.m in Sources */,
 				0CCF569E20FEE37D00B8FE09 /* CFClassificationController.m in Sources */,
+				0C79152D2109BDBE00D23547 /* CFTabBarItem.m in Sources */,
 				0CCF56A420FEE46B00B8FE09 /* CFPersonalCenterController.m in Sources */,
 				0CA8CB5121085F9C00DC7DF6 /* CFShoppingCartCell1.m in Sources */,
 				0CCF567020FED2F900B8FE09 /* main.m in Sources */,
 				0C79152721095E0A00D23547 /* CFShoppingCartHeaderView.m in Sources */,
 				0CCF56B720FF2ABA00B8FE09 /* CFHomeCollectionCell.m in Sources */,
 				0CA8CB5421085FF200DC7DF6 /* CFShoppingCartCell2.m in Sources */,
-				0CCF56A720FEE70C00B8FE09 /* CFTabBarItem.m in Sources */,
 				0CCF56A120FEE3A200B8FE09 /* CFHomePageController.m in Sources */,
 				0C4754FA21006E0A007DC738 /* CFRefreshHeader.m in Sources */,
 				0C4754F7210033BE007DC738 /* CFHomeCollectionHeader.m in Sources */,
 				0C33B89C210707B600A18FD8 /* CFEditCollectionCell.m in Sources */,
+				0C79152E2109BDBE00D23547 /* CFTabBarController.m in Sources */,
 				0CCF569B20FEE2F800B8FE09 /* CFShoppingCartController.m in Sources */,
 				0C80ACB22101A92D00703876 /* CFSegmentedControl.m in Sources */,
 				0CCF569820FEE27A00B8FE09 /* CFBaseController.m in Sources */,
 				0CCF566220FED2F800B8FE09 /* AppDelegate.m in Sources */,
 				0CCF56BB20FF34F600B8FE09 /* PurchaseCarAnimationTool.m in Sources */,
-				0CCF569420FEE18300B8FE09 /* CFTabBarController.m in Sources */,
 				0C82C8572105ABCD0063735E /* CFHomeCollectionHeaderTwo.m in Sources */,
 				0CCF56AF20FF139300B8FE09 /* CALayer+CFAnimation.m in Sources */,
 				0CCF56B320FF291900B8FE09 /* UIColor+CFColor.m in Sources */,

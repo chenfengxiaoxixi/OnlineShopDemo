@@ -50,9 +50,13 @@
     [_tableView addSubview:bgImageView];
     
     //其他控件也可以添加到_tableView的空白处，随tableview和伸缩动画联动
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(30,-100,100, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20,-100,100, 30)];
     label.backgroundColor = kRedColor;
     [_tableView addSubview:label];
+    
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(20,-150,100, 20)];
+    label2.backgroundColor = kBlackColor;
+    [_tableView addSubview:label2];
     
 }
 
