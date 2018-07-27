@@ -4,13 +4,13 @@
 # gif效果演示
 
 ![gif图1](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/headerRefresh演示.gif)
-    ![gif图2](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/购物车动画演示.gif)
+  ![gif图2](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/购物车动画演示.gif)
 
 ![gif图3](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/详情布局演示.gif)
-    ![gif图4](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/SemiModal动画演示.gif)
+  ![gif图4](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/SemiModal动画演示.gif)
 
 ![gif图5](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/分类演示.gif)
-    ![gif图6](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/collectionCell左滑动画演示.gif)
+  ![gif图6](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/collectionCell左滑动画演示.gif)
 
 ![gif图7](https://github.com/chenfengxiaoxixi/OnlineShopDemo/blob/master/gif演示图/header拉伸动画演示.gif)
 
