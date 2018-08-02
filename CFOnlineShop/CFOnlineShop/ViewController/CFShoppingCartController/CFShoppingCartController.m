@@ -70,7 +70,7 @@
         CFShoppingCartCell1 *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionCell forIndexPath:indexPath];
         [cell configCollectionCellType:(CFEditCollectionCellTypeWithDelete)];
         
-        cell.backgroundColor = kRedColor;
+        //cell.backgroundColor = kRedColor;
         cell.titleStr.text = @"测试商品";
         NSString *imageName = [NSString stringWithFormat:@"commodity_%ld",(long)indexPath.row + 1];
         cell.imageView.image = [UIImage imageNamed:imageName];

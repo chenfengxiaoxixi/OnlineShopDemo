@@ -28,6 +28,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+
+        _status = CFEditCollectionCellStatusWithNormal;
         
         self.contentView.backgroundColor = kWhiteColor;
         
@@ -43,19 +45,19 @@
 
 - (void)configCollectionCellType:(CFEditCollectionCellType )type
 {
-    
     [self.contentView addGestureRecognizer:_pan];
     
     if (type == CFEditCollectionCellTypeWithDelete) {
 
-        deleteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        deleteButton.frame = CGRectMake(self.mj_w - kDeleteBtnWidth, 0, kDeleteBtnWidth, self.mj_h);
-        [deleteButton addTarget:self action:@selector(deleteAction:) forControlEvents:(UIControlEventTouchUpInside)];
-        [deleteButton setImage:[UIImage imageNamed:@"delete"] forState:(UIControlStateNormal)];
-        deleteButton.backgroundColor = kRedColor;
-        [self addSubview:deleteButton];
-        [self sendSubviewToBack:deleteButton];
-        
+        if (deleteButton == nil) {
+            deleteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+            deleteButton.frame = CGRectMake(self.mj_w - kDeleteBtnWidth, 0, kDeleteBtnWidth, self.mj_h);
+            [deleteButton addTarget:self action:@selector(deleteAction:) forControlEvents:(UIControlEventTouchUpInside)];
+            [deleteButton setImage:[UIImage imageNamed:@"delete"] forState:(UIControlStateNormal)];
+            deleteButton.backgroundColor = kRedColor;
+            [self addSubview:deleteButton];
+            [self sendSubviewToBack:deleteButton];
+        }
     }
     else if (type == CFEditCollectionCellTypeWithNone)
     {
@@ -75,25 +77,26 @@
 - (void)hiddenButtonsWithAnimation
 {
     if (self.contentView.mj_x != 0) {
-        [UIView animateWithDuration:0.25 animations:^{
+        [UIView animateWithDuration:0.15 animations:^{
             self.contentView.mj_x = 0;
             } completion:^(BOOL finished) {
+                _status = CFEditCollectionCellStatusWithNormal;
         }];
     }
 }
 
 - (void)showButtonsWithAnimation
 {
-    [UIView animateWithDuration:0.25 animations:^{
-        self.contentView.mj_x = -kDeleteBtnWidth;
+    [UIView animateWithDuration:0.15 animations:^{
+        self.contentView.mj_x = -kDeleteBtnWidth*1;
         } completion:^(BOOL finished) {
-        
+            _status = CFEditCollectionCellStatusWithEdit;
     }];
 }
 
 - (void)tapGesture:(UITapGestureRecognizer *)tap
 {
-    if (self.contentView.mj_x == -kDeleteBtnWidth) {
+    if (_status == CFEditCollectionCellStatusWithEdit) {
         [self hiddenButtonsWithAnimation];
     }
 }
@@ -109,7 +112,40 @@
         case UIGestureRecognizerStateChanged:
         {
             CGPoint translation = [panGesture translationInView:self];
-            isLeft = (translation.x - origin.x < 0);
+            isLeft = (translation.x < 0);
+            
+            NSLog(@"panGesture.view.mj_x = %lf",translation.x);
+            
+            if (isLeft) {
+                //多加了30的缓冲偏移量,因为translation.x并不一直是等差变化，滑动速度越快，中间变化量越大
+                if (ABS(translation.x) <= kDeleteBtnWidth*1 + 30 &&
+                    _status == CFEditCollectionCellStatusWithNormal) {
+                    panGesture.view.mj_x = translation.x;
+                    
+                }
+                //左滑未松开然后又向右滑动
+                else if (ABS(translation.x) <= 30 &&
+                         _status == CFEditCollectionCellStatusWithEdit)
+                {
+                    panGesture.view.mj_x = - (kDeleteBtnWidth*1 - translation.x);
+                }
+                NSLog(@"左");
+            }
+            else
+            {
+                if (ABS(translation.x) <= kDeleteBtnWidth*1 + 30 &&
+                    _status == CFEditCollectionCellStatusWithEdit) {
+                    panGesture.view.mj_x = - (kDeleteBtnWidth*1 - translation.x);
+                }
+                //右滑未松开然后又向左滑动
+                else if (ABS(translation.x) <= 30 &&
+                         _status == CFEditCollectionCellStatusWithNormal &&
+                         panGesture.view.mj_x != 0)
+                {
+                    panGesture.view.mj_x = translation.x;
+                }
+                NSLog(@"右");
+            }
         }
             break;
         case UIGestureRecognizerStateEnded:
@@ -165,7 +201,7 @@
     {
         //判断如果当前没有滑动的cell，则关闭cell内部点击事件，响应外部didSelectItemAtIndexPath事件
         //x坐标不为0时，表示当前cell处于左滑状态
-        if (currentCell.contentView.mj_x != 0) {
+        if (currentCell.status == CFEditCollectionCellStatusWithEdit) {
             [currentCell hiddenButtonsWithAnimation];//关闭当前左滑的cell
             
             return YES;
