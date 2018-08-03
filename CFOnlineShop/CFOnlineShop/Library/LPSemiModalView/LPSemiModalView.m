@@ -33,6 +33,7 @@
 - (void)open
 {
     if (!self.narrowedOff) {
+        //self.contentView.hidden = YES;
         CATransform3D t = CATransform3DIdentity;
         t.m34 = -0.004;
         [self.maskImageView.layer setTransform:t];
