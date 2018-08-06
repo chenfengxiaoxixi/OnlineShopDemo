@@ -20,7 +20,6 @@
 		0C79152E2109BDBE00D23547 /* CFTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C79152A2109BDBE00D23547 /* CFTabBarController.m */; };
 		0C80ACAE21018A3800703876 /* LPSemiModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C80ACAD21018A3800703876 /* LPSemiModalView.m */; };
 		0C80ACB22101A92D00703876 /* CFSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C80ACB12101A92D00703876 /* CFSegmentedControl.m */; };
-		0C80ACB52101C1A800703876 /* CFDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C80ACB42101C1A800703876 /* CFDetailView.m */; };
 		0C82C8572105ABCD0063735E /* CFHomeCollectionHeaderTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C8562105ABCD0063735E /* CFHomeCollectionHeaderTwo.m */; };
 		0C82C85A2105AC380063735E /* CFHomeHeaderTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C8592105AC380063735E /* CFHomeHeaderTwoCell.m */; };
 		0CA8CB5121085F9C00DC7DF6 /* CFShoppingCartCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8CB5021085F9C00DC7DF6 /* CFShoppingCartCell1.m */; };
@@ -68,8 +67,6 @@
 		0C80ACAD21018A3800703876 /* LPSemiModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPSemiModalView.m; sourceTree = "<group>"; };
 		0C80ACB02101A92D00703876 /* CFSegmentedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFSegmentedControl.h; sourceTree = "<group>"; };
 		0C80ACB12101A92D00703876 /* CFSegmentedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFSegmentedControl.m; sourceTree = "<group>"; };
-		0C80ACB32101C1A800703876 /* CFDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFDetailView.h; sourceTree = "<group>"; };
-		0C80ACB42101C1A800703876 /* CFDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFDetailView.m; sourceTree = "<group>"; };
 		0C82C8552105ABCD0063735E /* CFHomeCollectionHeaderTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFHomeCollectionHeaderTwo.h; sourceTree = "<group>"; };
 		0C82C8562105ABCD0063735E /* CFHomeCollectionHeaderTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFHomeCollectionHeaderTwo.m; sourceTree = "<group>"; };
 		0C82C8582105AC380063735E /* CFHomeHeaderTwoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFHomeHeaderTwoCell.h; sourceTree = "<group>"; };
@@ -320,8 +317,6 @@
 				0C4754F6210033BE007DC738 /* CFHomeCollectionHeader.m */,
 				0C4754F821006E0A007DC738 /* CFRefreshHeader.h */,
 				0C4754F921006E0A007DC738 /* CFRefreshHeader.m */,
-				0C80ACB32101C1A800703876 /* CFDetailView.h */,
-				0C80ACB42101C1A800703876 /* CFDetailView.m */,
 				0C82C8552105ABCD0063735E /* CFHomeCollectionHeaderTwo.h */,
 				0C82C8562105ABCD0063735E /* CFHomeCollectionHeaderTwo.m */,
 				0C82C8582105AC380063735E /* CFHomeHeaderTwoCell.h */,
@@ -467,7 +462,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C33B8982106C02E00A18FD8 /* CFClassificationCell.m in Sources */,
-				0C80ACB52101C1A800703876 /* CFDetailView.m in Sources */,
 				0CCF569E20FEE37D00B8FE09 /* CFClassificationController.m in Sources */,
 				0C73E0852118499500D413A4 /* CFActivityController.m in Sources */,
 				0C79152D2109BDBE00D23547 /* CFTabBarItem.m in Sources */,
