@@ -9,7 +9,10 @@
 #import "CFDetailInfoController.h"
 #import "LPSemiModalView.h"
 #import "CFSegmentedControl.h"
-#import "CFDetailView.h"
+#import "CFDetailViewController.h"
+#import "CFActivityController.h"
+#import "CFOthersController.h"
+
 
 @interface CFDetailInfoController ()<CFSegmentedControlDataSource,CFSegmentedControlDelegate,UIScrollViewDelegate>
 
@@ -21,7 +24,7 @@
 //能左右滑动的scrollview
 @property (nonatomic, strong) UIScrollView *bgScrollView;
 
-@property (nonatomic, strong) CFDetailView *detailView;
+@property (nonatomic, strong) CFDetailViewController *detailViewController;
 
 @property (nonatomic, strong) NSArray *segmentTitles;
 
@@ -82,13 +85,18 @@
 
 - (void)setDetailView
 {
+    //这里为了避免该控制器耦合性高的问题，所以使用addChildViewController的形式，来添加视图
     //详情
-    _detailView = [[CFDetailView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height) image:_image];
-    [_bgScrollView addSubview:_detailView];
+    _detailViewController = [[CFDetailViewController alloc] init];
+    _detailViewController.image = _image;
+    [self addChildViewController:_detailViewController];
+    [_detailViewController didMoveToParentViewController:self];
+    [_detailViewController.view setFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height)];
+    //注意视图要添加到_bgScrollView上
+    [_bgScrollView addSubview:_detailViewController.view];
     WeakSelf(self);
-    //tableview滑动时控制导航栏的显示
-    [_detailView setScrollViewDidScroll:^(UIScrollView *scrollView) {
-        if (scrollView == weakself.detailView.tableView){
+    [_detailViewController setScrollViewDidScroll:^(UIScrollView *scrollView) {
+        if (scrollView == weakself.detailViewController.tableView){
             
             if (scrollView.mj_offsetY > 0 && scrollView.mj_offsetY < 60) {
                 
@@ -110,25 +118,23 @@
             
         }
     }];
-    [_detailView setAddActionWithBlock:^{
+    [_detailViewController setAddActionWithBlock:^{
         [weakself.narrowedModalView open];
     }];
     
-    //其他1
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(Main_Screen_Width + 100,100, 100, 20)];
-    label.font = SYSTEMFONT(16);
-    label.textColor = KDarkTextColor;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"没有内容";
-    [_bgScrollView addSubview:label];
+    //活动
+    CFActivityController *activityController = [[CFActivityController alloc] init];
+    [self addChildViewController:activityController];
+    [activityController didMoveToParentViewController:self];
+    [activityController.view setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width, Main_Screen_Height)];
+    [_bgScrollView addSubview:activityController.view];
     
-    //其他2
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(Main_Screen_Width*2 + 100,100, 100, 20)];
-    label2.font = SYSTEMFONT(16);
-    label2.textColor = KDarkTextColor;
-    label2.textAlignment = NSTextAlignmentCenter;
-    label2.text = @"没有内容";
-    [_bgScrollView addSubview:label2];
+    //其他
+    CFOthersController *othersController = [[CFOthersController alloc] init];
+    [self addChildViewController:othersController];
+    [othersController didMoveToParentViewController:self];
+    [othersController.view setFrame:CGRectMake(Main_Screen_Width*2, 0, Main_Screen_Width, Main_Screen_Height)];
+    [_bgScrollView addSubview:othersController.view];
 }
 
 #pragma mark -- UIScrollViewDelegate 用于控制头部视图滑动的视差效果
@@ -142,10 +148,10 @@
         [_segmentedControl didSelectIndex:index];
         WeakSelf(self);
         if (index == 0) {
-            if (_detailView.tableView.mj_offsetY >= 0 && _detailView.tableView.mj_offsetY < 60) {
+            if (_detailViewController.tableView.mj_offsetY >= 0 && _detailViewController.tableView.mj_offsetY < 60) {
                 
                 [UIView animateWithDuration:0.25 animations:^{
-                    weakself.navigationBgView.alpha = 1 * (weakself.detailView.tableView.mj_offsetY / 60.f);
+                    weakself.navigationBgView.alpha = 1 * (weakself.detailViewController.tableView.mj_offsetY / 60.f);
                     weakself.segmentedControl.alpha = weakself.navigationBgView.alpha;
                 }];
             }

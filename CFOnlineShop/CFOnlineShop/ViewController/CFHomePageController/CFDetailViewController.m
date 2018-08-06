@@ -1,14 +1,15 @@
 //
-//  CFDetailView.m
+//  CFDetailViewController.m
 //  CFOnlineShop
 //
-//  Created by chenfeng on 2018/7/20.
+//  Created by chenfeng on 2018/8/6.
 //  Copyright © 2018年 chenfeng. All rights reserved.
 //
 
-#import "CFDetailView.h"
+#import "CFDetailViewController.h"
+//#import "CFDetailView.h"
 
-@interface CFDetailView ()<UITableViewDelegate,UITableViewDataSource>
+@interface CFDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UIView *bigView;
 @property (nonatomic, strong) UIWebView *webView;
@@ -18,23 +19,25 @@
 //记录底部空间所需的高度
 @property (nonatomic, assign) CGFloat bottomHeight;
 
+//@property (nonatomic, strong) CFDetailView *detailView;
+
 @end
 
-@implementation CFDetailView
+@implementation CFDetailViewController
 
-- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        
-        _image = image;
-        
-        [self setBgUI];
-        [self setHeaderAndFooterView];
-        [self setBottomView];
-        
-    }
-    return self;
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    [self setBgUI];
+    [self setHeaderAndFooterView];
+    [self setBottomView];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)dealloc
@@ -68,7 +71,7 @@
     
     _webView.scrollView.delegate = self;
     
-    [self addSubview:_bigView];
+    [self.view addSubview:_bigView];
     [_bigView addSubview:_tableView];
     [_bigView addSubview:_webView];
     
@@ -91,7 +94,7 @@
     _headerImageView.contentMode = UIViewContentModeScaleAspectFit;
     _headerImageView.image = _image;
     [_tempScrollView addSubview:_headerImageView];
-
+    
     _tableView.tableHeaderView = headerView;
     
     UILabel *pullMsgView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 40)];
@@ -119,7 +122,7 @@
 {
     UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(0, Main_Screen_Height - _bottomHeight, Main_Screen_Width, _bottomHeight)];
     bottomView.backgroundColor = KBackgroundColor;
-    [self addSubview:bottomView];
+    [self.view addSubview:bottomView];
     
     UIButton *addButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     addButton.frame = CGRectMake(bottomView.mj_w/2, 0, bottomView.mj_w/2, _bottomHeight);
@@ -226,10 +229,12 @@
 }
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 */
 

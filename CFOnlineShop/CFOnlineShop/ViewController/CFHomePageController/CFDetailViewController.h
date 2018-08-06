@@ -1,20 +1,18 @@
 //
-//  CFDetailView.h
+//  CFDetailViewController.h
 //  CFOnlineShop
 //
-//  Created by chenfeng on 2018/7/20.
+//  Created by chenfeng on 2018/8/6.
 //  Copyright © 2018年 chenfeng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CFBaseController.h"
 
-@interface CFDetailView : UIView
+@interface CFDetailViewController : CFBaseController
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) UIImage *image;
-
-- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image;
 
 @property (nonatomic, strong) void (^addActionWithBlock)(void);
 
