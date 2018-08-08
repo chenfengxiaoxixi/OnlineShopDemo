@@ -1,0 +1,1 @@
+../../../RollingNotice/RollingNotice/GYRollingNoticeView/GYRollingNoticeView.h
