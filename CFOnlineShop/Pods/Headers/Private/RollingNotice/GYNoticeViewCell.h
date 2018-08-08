@@ -1,1 +1,0 @@
-../../../RollingNotice/RollingNotice/GYRollingNoticeView/GYNoticeViewCell.h
