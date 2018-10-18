@@ -8,7 +8,7 @@
 
 #import "CFBaseController.h"
 
-@interface CFDetailInfoController : CFBaseController<UINavigationControllerDelegate>
+@interface CFDetailInfoController : CFBaseController
 
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, weak) UIImageView *imageView;

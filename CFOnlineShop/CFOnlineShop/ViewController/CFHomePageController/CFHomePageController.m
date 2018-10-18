@@ -15,7 +15,7 @@
 #import "CFRefreshHeader.h"
 #import "CFDetailInfoController.h"
 
-@interface CFHomePageController ()<UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate>
+@interface CFHomePageController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UIButton *searchBtn;
 @property (nonatomic, strong) UIImageView *searchImageView;
