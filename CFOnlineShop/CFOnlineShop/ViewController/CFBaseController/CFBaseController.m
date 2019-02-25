@@ -43,7 +43,7 @@
     //适配左滑时tabbar显示出来的问题
     if (self.hidesBottomBarWhenPushed) {
         if ([self.tabBarController isKindOfClass:[CFTabBarController class]]) {
-            
+
             CFTabBarController *tabBar = (CFTabBarController *)self.tabBarController;
             [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
                 tabBar.tabBarItemView.mj_y = Main_Screen_Height;

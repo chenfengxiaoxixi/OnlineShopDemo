@@ -222,10 +222,10 @@
         }];
     }];
     
-    if ([_delegate respondsToSelector:@selector(control:didSelectAtIndex:)])
-    {
-        [_delegate control:self didSelectAtIndex:_tapIndex];
-    }
+//    if ([_delegate respondsToSelector:@selector(control:didSelectAtIndex:)])
+//    {
+//        [_delegate control:self didSelectAtIndex:_tapIndex];
+//    }
 }
 
 /*

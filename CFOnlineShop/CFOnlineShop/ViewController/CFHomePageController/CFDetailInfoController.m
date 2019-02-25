@@ -12,7 +12,7 @@
 #import "CFDetailViewController.h"
 #import "CFActivityController.h"
 #import "CFOthersController.h"
-
+#import "CFCarouselScrollView.h"
 
 @interface CFDetailInfoController ()<CFSegmentedControlDataSource,CFSegmentedControlDelegate,UIScrollViewDelegate>
 
@@ -126,7 +126,7 @@
     CFActivityController *activityController = [[CFActivityController alloc] init];
     [self addChildViewController:activityController];
     [activityController didMoveToParentViewController:self];
-    [activityController.view setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width, Main_Screen_Height)];
+    [activityController.view setFrame:CGRectMake(Main_Screen_Width, 140, Main_Screen_Width, Main_Screen_Height - 300)];
     [_bgScrollView addSubview:activityController.view];
     
     //其他

@@ -164,7 +164,7 @@
         [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{
             weakself.tabBarItemView.alpha = 0;
             weakself.tabBarItemView.mj_y = Main_Screen_Height;
-            
+
         }];
     }else{
         [UIView animateWithDuration:animated ? 0.3 : 0 animations:^{

@@ -123,7 +123,7 @@
                     panGesture.view.mj_x = translation.x;
                     
                 }
-                //左滑未松开然后又向右滑动
+                //左滑未松开然后又向左滑动
                 else if (ABS(translation.x) <= 30 &&
                          _status == CFEditCollectionCellStatusWithEdit)
                 {
@@ -137,7 +137,7 @@
                     _status == CFEditCollectionCellStatusWithEdit) {
                     panGesture.view.mj_x = - (kDeleteBtnWidth*1 - translation.x);
                 }
-                //右滑未松开然后又向左滑动
+                //左滑滑未松开然后又向右滑动
                 else if (ABS(translation.x) <= 30 &&
                          _status == CFEditCollectionCellStatusWithNormal &&
                          panGesture.view.mj_x != 0)
