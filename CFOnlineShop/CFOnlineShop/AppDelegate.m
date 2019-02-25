@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "CFTabBarController.h"
 
-@interface AppDelegate ()<UINavigationControllerDelegate>
+@interface AppDelegate ()
 
 @end
 
@@ -26,7 +26,6 @@
     
     //根控制器
     self.baseWindowNav = [[UINavigationController alloc] init];
-    self.baseWindowNav.delegate = self;
     self.baseWindowNav.navigationBar.hidden = YES;
     self.window.rootViewController = self.baseWindowNav;
     
