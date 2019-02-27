@@ -97,11 +97,6 @@
     _carouselView.dataSource = self;
     [_tempScrollView addSubview:_carouselView];
     
-//    _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Width)];
-//    _headerImageView.contentMode = UIViewContentModeScaleAspectFit;
-//    _headerImageView.image = _image;
-//    [_tempScrollView addSubview:_headerImageView];
-    
     _tableView.tableHeaderView = headerView;
     
     UILabel *pullMsgView = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 40)];

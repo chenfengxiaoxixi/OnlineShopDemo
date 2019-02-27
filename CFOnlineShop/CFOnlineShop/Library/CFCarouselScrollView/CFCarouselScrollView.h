@@ -11,7 +11,7 @@
 @protocol CFCarouselScrollViewDataSource <NSObject>
 
 @required
-//获取分段title显示
+//获取image资源
 - (NSArray *)getImagesWithArray;
 @end
 

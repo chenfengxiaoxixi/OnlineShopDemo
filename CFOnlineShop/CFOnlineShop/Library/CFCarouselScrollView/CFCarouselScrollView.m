@@ -27,6 +27,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
+        //底层scrollView
         bgScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         bgScrollView.pagingEnabled = YES;
         bgScrollView.delegate = self;
@@ -60,6 +61,7 @@
         
         if ([image isKindOfClass:[NSString class]]) {
             
+            //嵌套的scrollView，用来包住每个imageview；实现的遮盖效果，实际是操作的imageview在childScrollView上的偏移
             UIScrollView *childScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(self.mj_w * i, 0, self.mj_w, self.mj_h)];
             childScrollView.tag = 100 + i;
             [bgScrollView addSubview:childScrollView];
