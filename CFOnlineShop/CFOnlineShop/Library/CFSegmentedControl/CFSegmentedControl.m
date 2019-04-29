@@ -81,6 +81,7 @@
 }
 
 #pragma mark - init support
+
 - (CALayer *)createBgLayerWithColor:(UIColor *)color andPosition:(CGPoint)position {
     CALayer *layer = [CALayer layer];
     

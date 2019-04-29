@@ -8,7 +8,6 @@
 
 #import "CFDetailViewController.h"
 #import "CFCarouselScrollView.h"
-//#import "CFDetailView.h"
 
 @interface CFDetailViewController ()<UITableViewDelegate,UITableViewDataSource,CFCarouselScrollViewDataSource>
 
@@ -170,11 +169,7 @@
     if (scrollView == _webView.scrollView) {
         if (offset < -50) {
             [UIView animateWithDuration:0.4 animations:^{
-                [UIView animateWithDuration:0.4 animations:^{
-                    weakself.bigView.transform = CGAffineTransformIdentity;
-                    
-                }];
-            } completion:^(BOOL finished) {
+                weakself.bigView.transform = CGAffineTransformIdentity;
                 
             }];
         }
