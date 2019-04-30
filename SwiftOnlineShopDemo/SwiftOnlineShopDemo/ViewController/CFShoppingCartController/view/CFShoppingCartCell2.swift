@@ -1,14 +1,14 @@
 //
-//  CollectionViewCell2.swift
+//  CFShoppingCartCell2.swift
 //  SwiftOnlineShopDemo
 //
-//  Created by chenfeng on 2019/4/29.
+//  Created by chenfeng on 2019/4/30.
 //  Copyright © 2019年 chenfeng. All rights reserved.
 //
 
 import UIKit
 
-class CollectionViewCell2: CFEditCollectionCell {
+class CFShoppingCartCell2: CFEditCollectionCell {
     
     var imageView: UIImageView!
     var titleStr: UILabel!
@@ -35,5 +35,4 @@ class CollectionViewCell2: CFEditCollectionCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }

@@ -33,9 +33,6 @@
         
         self.contentView.backgroundColor = kWhiteColor;
         
-        _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureDidPan:)];
-        _pan.delegate = self;
-        
         _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
         _tap.delegate = self;
         [self.contentView addGestureRecognizer:_tap];
@@ -45,10 +42,13 @@
 
 - (void)configCollectionCellType:(CFEditCollectionCellType )type
 {
-    [self.contentView addGestureRecognizer:_pan];
     
     if (type == CFEditCollectionCellTypeWithDelete) {
 
+        _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureDidPan:)];
+        _pan.delegate = self;
+        [self.contentView addGestureRecognizer:_pan];
+        
         if (deleteButton == nil) {
             deleteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
             deleteButton.frame = CGRectMake(self.mj_w - kDeleteBtnWidth, 0, kDeleteBtnWidth, self.mj_h);
@@ -61,8 +61,7 @@
     }
     else if (type == CFEditCollectionCellTypeWithNone)
     {
-        //点击手势保留
-        [self.contentView removeGestureRecognizer:_pan];
+
     }
 }
 

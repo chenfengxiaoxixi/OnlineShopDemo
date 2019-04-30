@@ -19,6 +19,7 @@
 		0C5FED1D226F09B700D0E27E /* CFPersonalCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5FED1C226F09B700D0E27E /* CFPersonalCenterController.swift */; };
 		0C5FED1F226F09C200D0E27E /* CFShoppingCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5FED1E226F09C200D0E27E /* CFShoppingCartController.swift */; };
 		0C7B877122705E0D009205F4 /* PurchaseCarAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7B877022705E0D009205F4 /* PurchaseCarAnimationTool.m */; };
+		0C84B5A1227834390003A33A /* CFShoppingCartCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84B5A0227834390003A33A /* CFShoppingCartCell2.swift */; };
 		0C8C109B227180010031CFF7 /* CFHomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C109A227180010031CFF7 /* CFHomeCollectionCell.swift */; };
 		0C8C109D2271820C0031CFF7 /* CFHomeCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C109C2271820C0031CFF7 /* CFHomeCollectionHeader.swift */; };
 		0C8C109F227182700031CFF7 /* CFHomeCollectionHeaderTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C109E227182700031CFF7 /* CFHomeCollectionHeaderTwo.swift */; };
@@ -29,7 +30,6 @@
 		0C98DE3D2277041B007C681C /* CFShoppingCartHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98DE3C2277041B007C681C /* CFShoppingCartHeaderView.swift */; };
 		0C98DE402277053B007C681C /* CFEditCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98DE3F2277053B007C681C /* CFEditCollectionCell.swift */; };
 		0C98DE422277056D007C681C /* CFShoppingCartCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98DE412277056D007C681C /* CFShoppingCartCell1.swift */; };
-		0C98DE4422770584007C681C /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98DE4322770584007C681C /* CollectionViewCell2.swift */; };
 		0CDA7123226F1C0D00BD13E4 /* GlobalConfigDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDA7122226F1C0D00BD13E4 /* GlobalConfigDefinition.swift */; };
 		0CF1C6F22272DA94007F7B16 /* CFRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6F12272DA94007F7B16 /* CFRefreshHeader.swift */; };
 		0CF1C6F42272E783007F7B16 /* CFDetailInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6F32272E783007F7B16 /* CFDetailInfoController.swift */; };
@@ -56,6 +56,7 @@
 		0C5FED1E226F09C200D0E27E /* CFShoppingCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFShoppingCartController.swift; sourceTree = "<group>"; };
 		0C7B876F22705E0D009205F4 /* PurchaseCarAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseCarAnimationTool.h; sourceTree = "<group>"; };
 		0C7B877022705E0D009205F4 /* PurchaseCarAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseCarAnimationTool.m; sourceTree = "<group>"; };
+		0C84B5A0227834390003A33A /* CFShoppingCartCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFShoppingCartCell2.swift; sourceTree = "<group>"; };
 		0C8C109A227180010031CFF7 /* CFHomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeCollectionCell.swift; sourceTree = "<group>"; };
 		0C8C109C2271820C0031CFF7 /* CFHomeCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeCollectionHeader.swift; sourceTree = "<group>"; };
 		0C8C109E227182700031CFF7 /* CFHomeCollectionHeaderTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeCollectionHeaderTwo.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		0C98DE3C2277041B007C681C /* CFShoppingCartHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFShoppingCartHeaderView.swift; sourceTree = "<group>"; };
 		0C98DE3F2277053B007C681C /* CFEditCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFEditCollectionCell.swift; sourceTree = "<group>"; };
 		0C98DE412277056D007C681C /* CFShoppingCartCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFShoppingCartCell1.swift; sourceTree = "<group>"; };
-		0C98DE4322770584007C681C /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
 		0CDA7122226F1C0D00BD13E4 /* GlobalConfigDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConfigDefinition.swift; sourceTree = "<group>"; };
 		0CF1C6F12272DA94007F7B16 /* CFRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFRefreshHeader.swift; sourceTree = "<group>"; };
 		0CF1C6F32272E783007F7B16 /* CFDetailInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFDetailInfoController.swift; sourceTree = "<group>"; };
@@ -275,7 +275,7 @@
 			children = (
 				0C98DE3C2277041B007C681C /* CFShoppingCartHeaderView.swift */,
 				0C98DE412277056D007C681C /* CFShoppingCartCell1.swift */,
-				0C98DE4322770584007C681C /* CollectionViewCell2.swift */,
+				0C84B5A0227834390003A33A /* CFShoppingCartCell2.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -440,7 +440,6 @@
 				0C933F3722757ACF000B1E06 /* CFCycleScrollView.swift in Sources */,
 				0C8C109B227180010031CFF7 /* CFHomeCollectionCell.swift in Sources */,
 				0C5FED17226F092400D0E27E /* CFBaseController.swift in Sources */,
-				0C98DE4422770584007C681C /* CollectionViewCell2.swift in Sources */,
 				0CF1C6F22272DA94007F7B16 /* CFRefreshHeader.swift in Sources */,
 				0C98DE422277056D007C681C /* CFShoppingCartCell1.swift in Sources */,
 				0C98DE402277053B007C681C /* CFEditCollectionCell.swift in Sources */,
@@ -456,6 +455,7 @@
 				0C5FECE8226EDBCC00D0E27E /* AppDelegate.swift in Sources */,
 				0CF1C6F82272E854007F7B16 /* CFActivityController.swift in Sources */,
 				0C7B877122705E0D009205F4 /* PurchaseCarAnimationTool.m in Sources */,
+				0C84B5A1227834390003A33A /* CFShoppingCartCell2.swift in Sources */,
 				0C933F34227543AF000B1E06 /* LPSemiModalView.m in Sources */,
 				0C5FED1D226F09B700D0E27E /* CFPersonalCenterController.swift in Sources */,
 				0C98DE3D2277041B007C681C /* CFShoppingCartHeaderView.swift in Sources */,
