@@ -19,7 +19,7 @@ class CFDetailInfoController: CFBaseController,CFSegmentedControlDataSource,CFSe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         //self.modalPresentationStyle = .custom
         segmentTitles = ["详情","活动","其他"]

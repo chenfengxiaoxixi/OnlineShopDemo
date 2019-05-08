@@ -24,6 +24,7 @@
 		0C8C109D2271820C0031CFF7 /* CFHomeCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C109C2271820C0031CFF7 /* CFHomeCollectionHeader.swift */; };
 		0C8C109F227182700031CFF7 /* CFHomeCollectionHeaderTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C109E227182700031CFF7 /* CFHomeCollectionHeaderTwo.swift */; };
 		0C8C10A122719CFA0031CFF7 /* GYNoticeViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8C10A022719CFA0031CFF7 /* GYNoticeViewCell2.swift */; };
+		0C8D24212282BD6300B81B61 /* ModelTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8D24202282BD6300B81B61 /* ModelTool.swift */; };
 		0C933F34227543AF000B1E06 /* LPSemiModalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C933F33227543AF000B1E06 /* LPSemiModalView.m */; };
 		0C933F3722757ACF000B1E06 /* CFCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C933F3622757ACF000B1E06 /* CFCycleScrollView.swift */; };
 		0C98DE3A2276E86E007C681C /* CFClassificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C98DE392276E86E007C681C /* CFClassificationCell.swift */; };
@@ -37,6 +38,7 @@
 		0CF1C6F82272E854007F7B16 /* CFActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6F72272E854007F7B16 /* CFActivityController.swift */; };
 		0CF1C6FA2272E867007F7B16 /* CFOthersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6F92272E867007F7B16 /* CFOthersController.swift */; };
 		0CF1C6FD2272EA1E007F7B16 /* CFSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6FC2272EA1E007F7B16 /* CFSegmentedControl.swift */; };
+		0CFA6FF72281580F00D2C17C /* MoyaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA6FF62281580F00D2C17C /* MoyaApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,7 @@
 		0C8C109C2271820C0031CFF7 /* CFHomeCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeCollectionHeader.swift; sourceTree = "<group>"; };
 		0C8C109E227182700031CFF7 /* CFHomeCollectionHeaderTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFHomeCollectionHeaderTwo.swift; sourceTree = "<group>"; };
 		0C8C10A022719CFA0031CFF7 /* GYNoticeViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYNoticeViewCell2.swift; sourceTree = "<group>"; };
+		0C8D24202282BD6300B81B61 /* ModelTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTool.swift; sourceTree = "<group>"; };
 		0C933F32227543AF000B1E06 /* LPSemiModalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPSemiModalView.h; sourceTree = "<group>"; };
 		0C933F33227543AF000B1E06 /* LPSemiModalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPSemiModalView.m; sourceTree = "<group>"; };
 		0C933F3622757ACF000B1E06 /* CFCycleScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFCycleScrollView.swift; sourceTree = "<group>"; };
@@ -75,6 +78,7 @@
 		0CF1C6F72272E854007F7B16 /* CFActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFActivityController.swift; sourceTree = "<group>"; };
 		0CF1C6F92272E867007F7B16 /* CFOthersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFOthersController.swift; sourceTree = "<group>"; };
 		0CF1C6FC2272EA1E007F7B16 /* CFSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSegmentedControl.swift; sourceTree = "<group>"; };
+		0CFA6FF62281580F00D2C17C /* MoyaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaApi.swift; sourceTree = "<group>"; };
 		20A56DBB40C6D584191978D2 /* Pods-SwiftOnlineShopDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOnlineShopDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4DFF2C970709911445697754 /* Pods_SwiftOnlineShopDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftOnlineShopDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5652A6BBE06B38976491922E /* Pods-SwiftOnlineShopDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOnlineShopDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,9 +117,9 @@
 		0C5FECE6226EDBCC00D0E27E /* SwiftOnlineShopDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0CD11863227E8891008055EB /* ToolManager */,
 				0C5FED03226F00DA00D0E27E /* Library */,
 				0C5FECFD226F00DA00D0E27E /* MacroDefinition */,
-				0C5FECFE226F00DA00D0E27E /* ToolManager */,
 				0C5FED02226F00DA00D0E27E /* ViewController */,
 				0C5FECE7226EDBCC00D0E27E /* AppDelegate.swift */,
 				0C5FED11226F042900D0E27E /* swift_oc_briding_Header.h */,
@@ -134,13 +138,6 @@
 				0CDA7122226F1C0D00BD13E4 /* GlobalConfigDefinition.swift */,
 			);
 			path = MacroDefinition;
-			sourceTree = "<group>";
-		};
-		0C5FECFE226F00DA00D0E27E /* ToolManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ToolManager;
 			sourceTree = "<group>";
 		};
 		0C5FED02226F00DA00D0E27E /* ViewController */ = {
@@ -244,6 +241,14 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		0C8D241F2282BD3100B81B61 /* ModelTool */ = {
+			isa = PBXGroup;
+			children = (
+				0C8D24202282BD6300B81B61 /* ModelTool.swift */,
+			);
+			path = ModelTool;
+			sourceTree = "<group>";
+		};
 		0C933F31227543AF000B1E06 /* LPSemiModalView */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +291,23 @@
 				0C98DE3F2277053B007C681C /* CFEditCollectionCell.swift */,
 			);
 			path = CFEditCollectionCell;
+			sourceTree = "<group>";
+		};
+		0CD11863227E8891008055EB /* ToolManager */ = {
+			isa = PBXGroup;
+			children = (
+				0C8D241F2282BD3100B81B61 /* ModelTool */,
+				0CD11864227E8891008055EB /* HttpManager */,
+			);
+			path = ToolManager;
+			sourceTree = "<group>";
+		};
+		0CD11864227E8891008055EB /* HttpManager */ = {
+			isa = PBXGroup;
+			children = (
+				0CFA6FF62281580F00D2C17C /* MoyaApi.swift */,
+			);
+			path = HttpManager;
 			sourceTree = "<group>";
 		};
 		0CF1C6FB2272E9F3007F7B16 /* CFSegmentedControl */ = {
@@ -389,16 +411,22 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RollingNotice/RollingNotice.framework",
 				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RollingNotice.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -450,6 +478,7 @@
 				0C98DE3A2276E86E007C681C /* CFClassificationCell.swift in Sources */,
 				0C8C10A122719CFA0031CFF7 /* GYNoticeViewCell2.swift in Sources */,
 				0CF1C6FD2272EA1E007F7B16 /* CFSegmentedControl.swift in Sources */,
+				0C8D24212282BD6300B81B61 /* ModelTool.swift in Sources */,
 				0CF1C6F42272E783007F7B16 /* CFDetailInfoController.swift in Sources */,
 				0CDA7123226F1C0D00BD13E4 /* GlobalConfigDefinition.swift in Sources */,
 				0C5FECE8226EDBCC00D0E27E /* AppDelegate.swift in Sources */,
@@ -457,6 +486,7 @@
 				0C7B877122705E0D009205F4 /* PurchaseCarAnimationTool.m in Sources */,
 				0C84B5A1227834390003A33A /* CFShoppingCartCell2.swift in Sources */,
 				0C933F34227543AF000B1E06 /* LPSemiModalView.m in Sources */,
+				0CFA6FF72281580F00D2C17C /* MoyaApi.swift in Sources */,
 				0C5FED1D226F09B700D0E27E /* CFPersonalCenterController.swift in Sources */,
 				0C98DE3D2277041B007C681C /* CFShoppingCartHeaderView.swift in Sources */,
 			);

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//@_exported import Moya
+import Moya
 
 class CFHomePageController: CFBaseController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
@@ -20,11 +22,11 @@ class CFHomePageController: CFBaseController,UICollectionViewDelegate,UICollecti
         self.view.backgroundColor = BACKGROUND_VIEW_COLOR
         
         setUI()
+        
         // Do any additional setup after loading the view.
     }
-    
+
     func setUI() {
-        
         
         searchBtn = UIButton(type: .custom)
         searchBtn.frame = CGRect(x: 20, y: STATUSBAR_HEIGHT + 5, width: SCREEN_WIDTH - 40, height: 30)

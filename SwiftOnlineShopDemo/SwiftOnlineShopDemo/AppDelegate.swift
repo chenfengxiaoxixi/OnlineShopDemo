@@ -13,6 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    struct Person : Codable{
+        var name: String?
+        var age: String?
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +26,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
+        
+        
+        //字典转模型列子，数组转模型列子
+        let dic = ["name":"乘风","age":"19"]
+        let dic2 = ["name":"乘风2","age":"20"]
+        let array = [dic,dic2]
+
+        let model = ModelTool.dicToJSONModel(Person.self, withKeyValues: dic)
+
+        print(model)
+
+        print(dic)
+
+        let modelArray = ModelTool.arrayToJSONModel(Person.self, withKeyValuesArray: array)
+
+        print(modelArray)
+        
+        //Moya请求例子
+        provider.request(MoyaApi.categoryList(categoryId: "0")) { (result) in
+        
+        switch result {
+        case let .success(result):
+            do {
+                try print("result.mapJSON() = \(result.mapJSON())")
+            } catch {
+                print("MoyaError.jsonMapping(result) = \(result)")
+            }
+            default:
+                break
+            }
+            print("result = \(result.description)")
+        }
         
         
         return true
