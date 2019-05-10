@@ -7,9 +7,9 @@
 //
 
 #import "CFDetailViewController.h"
-//#import "CFDetailView.h"
+#import "CFCarouselScrollView.h"
 
-@interface CFDetailViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CFDetailViewController ()<UITableViewDelegate,UITableViewDataSource,CFCarouselScrollViewDataSource>
 
 @property (nonatomic, strong) UIView *bigView;
 @property (nonatomic, strong) UIWebView *webView;
@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIScrollView *tempScrollView;
 //记录底部空间所需的高度
 @property (nonatomic, assign) CGFloat bottomHeight;
+
+@property (nonatomic, strong) CFCarouselScrollView *carouselView;
 
 //@property (nonatomic, strong) CFDetailView *detailView;
 
@@ -32,7 +34,7 @@
     [self setBgUI];
     [self setHeaderAndFooterView];
     [self setBottomView];
-    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,10 +92,9 @@
     _tempScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Width)];
     [headerView addSubview:_tempScrollView];
     
-    _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Width)];
-    _headerImageView.contentMode = UIViewContentModeScaleAspectFit;
-    _headerImageView.image = _image;
-    [_tempScrollView addSubview:_headerImageView];
+    _carouselView = [[CFCarouselScrollView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Width)];
+    _carouselView.dataSource = self;
+    [_tempScrollView addSubview:_carouselView];
     
     _tableView.tableHeaderView = headerView;
     
@@ -168,11 +169,7 @@
     if (scrollView == _webView.scrollView) {
         if (offset < -50) {
             [UIView animateWithDuration:0.4 animations:^{
-                [UIView animateWithDuration:0.4 animations:^{
-                    weakself.bigView.transform = CGAffineTransformIdentity;
-                    
-                }];
-            } completion:^(BOOL finished) {
+                weakself.bigView.transform = CGAffineTransformIdentity;
                 
             }];
         }
@@ -186,6 +183,13 @@
     if (_addActionWithBlock) {
         _addActionWithBlock();
     }
+}
+
+#pragma mark -- CFCarouselScrollViewDataSource
+
+- (NSArray *)getImagesWithArray
+{
+    return @[@"commodity_1",@"commodity_2",@"commodity_3",@"commodity_4",@"commodity_5"];
 }
 
 #pragma mark -- UITableViewDelegate & dataSource

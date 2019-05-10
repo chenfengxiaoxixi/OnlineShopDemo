@@ -8,7 +8,7 @@
 
 #import "MJRefreshNormalHeader.h"
 
-static const double pass150Offset = -150;
+static const CGFloat pass150Offset = -150;
 
 @interface CFRefreshHeader : MJRefreshNormalHeader
 

@@ -81,6 +81,7 @@
 }
 
 #pragma mark - init support
+
 - (CALayer *)createBgLayerWithColor:(UIColor *)color andPosition:(CGPoint)position {
     CALayer *layer = [CALayer layer];
     
@@ -222,10 +223,10 @@
         }];
     }];
     
-    if ([_delegate respondsToSelector:@selector(control:didSelectAtIndex:)])
-    {
-        [_delegate control:self didSelectAtIndex:_tapIndex];
-    }
+//    if ([_delegate respondsToSelector:@selector(control:didSelectAtIndex:)])
+//    {
+//        [_delegate control:self didSelectAtIndex:_tapIndex];
+//    }
 }
 
 /*

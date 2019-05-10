@@ -24,6 +24,7 @@
 		0C82C85A2105AC380063735E /* CFHomeHeaderTwoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C8592105AC380063735E /* CFHomeHeaderTwoCell.m */; };
 		0CA8CB5121085F9C00DC7DF6 /* CFShoppingCartCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8CB5021085F9C00DC7DF6 /* CFShoppingCartCell1.m */; };
 		0CA8CB5421085FF200DC7DF6 /* CFShoppingCartCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8CB5321085FF200DC7DF6 /* CFShoppingCartCell2.m */; };
+		0CB1BDFE222389B60041BC06 /* CFCarouselScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB1BDFD222389B60041BC06 /* CFCarouselScrollView.m */; };
 		0CCF566220FED2F800B8FE09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCF566120FED2F800B8FE09 /* AppDelegate.m */; };
 		0CCF566A20FED2F900B8FE09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CCF566920FED2F900B8FE09 /* Assets.xcassets */; };
 		0CCF566D20FED2F900B8FE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CCF566B20FED2F900B8FE09 /* LaunchScreen.storyboard */; };
@@ -75,6 +76,8 @@
 		0CA8CB5021085F9C00DC7DF6 /* CFShoppingCartCell1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFShoppingCartCell1.m; sourceTree = "<group>"; };
 		0CA8CB5221085FF200DC7DF6 /* CFShoppingCartCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFShoppingCartCell2.h; sourceTree = "<group>"; };
 		0CA8CB5321085FF200DC7DF6 /* CFShoppingCartCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFShoppingCartCell2.m; sourceTree = "<group>"; };
+		0CB1BDFC222389B60041BC06 /* CFCarouselScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFCarouselScrollView.h; sourceTree = "<group>"; };
+		0CB1BDFD222389B60041BC06 /* CFCarouselScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CFCarouselScrollView.m; sourceTree = "<group>"; };
 		0CCF565D20FED2F800B8FE09 /* CFOnlineShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFOnlineShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CCF566020FED2F800B8FE09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0CCF566120FED2F800B8FE09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,10 +135,10 @@
 		0C7915282109BDBD00D23547 /* CFTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				0C7915292109BDBE00D23547 /* CFTabBarItem.m */,
-				0C79152A2109BDBE00D23547 /* CFTabBarController.m */,
-				0C79152B2109BDBE00D23547 /* CFTabBarController.h */,
 				0C79152C2109BDBE00D23547 /* CFTabBarItem.h */,
+				0C7915292109BDBE00D23547 /* CFTabBarItem.m */,
+				0C79152B2109BDBE00D23547 /* CFTabBarController.h */,
+				0C79152A2109BDBE00D23547 /* CFTabBarController.m */,
 			);
 			path = CFTabBarController;
 			sourceTree = "<group>";
@@ -156,6 +159,15 @@
 				0C80ACB12101A92D00703876 /* CFSegmentedControl.m */,
 			);
 			path = CFSegmentedControl;
+			sourceTree = "<group>";
+		};
+		0CB1BDFB222388650041BC06 /* CFCarouselScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				0CB1BDFC222389B60041BC06 /* CFCarouselScrollView.h */,
+				0CB1BDFD222389B60041BC06 /* CFCarouselScrollView.m */,
+			);
+			path = CFCarouselScrollView;
 			sourceTree = "<group>";
 		};
 		0CCF565420FED2F800B8FE09 = {
@@ -226,6 +238,7 @@
 		0CCF568020FEDD6E00B8FE09 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				0CB1BDFB222388650041BC06 /* CFCarouselScrollView */,
 				0C33B8992107079700A18FD8 /* CFEditCollectionCell */,
 				0C80ACAF2101A8BF00703876 /* CFSegmentedControl */,
 				0C80ACAB21018A3800703876 /* LPSemiModalView */,
@@ -472,6 +485,7 @@
 				0CCF56B720FF2ABA00B8FE09 /* CFHomeCollectionCell.m in Sources */,
 				0CA8CB5421085FF200DC7DF6 /* CFShoppingCartCell2.m in Sources */,
 				0C73E088211849D700D413A4 /* CFOthersController.m in Sources */,
+				0CB1BDFE222389B60041BC06 /* CFCarouselScrollView.m in Sources */,
 				0CCF56A120FEE3A200B8FE09 /* CFHomePageController.m in Sources */,
 				0C4754FA21006E0A007DC738 /* CFRefreshHeader.m in Sources */,
 				0C4754F7210033BE007DC738 /* CFHomeCollectionHeader.m in Sources */,
@@ -540,7 +554,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -630,7 +644,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.CFOnlineShop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.CFOnlineShopDemoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -650,7 +664,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.CFOnlineShop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.CFOnlineShopDemoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

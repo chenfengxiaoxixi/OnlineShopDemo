@@ -36,9 +36,6 @@ char *const p = "a";
         self.contentView.backgroundColor = kWhiteColor;
 
         
-        _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureDidPan:)];
-        _pan.delegate = self;
-        
         _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
         _tap.delegate = self;
         [self.contentView addGestureRecognizer:_tap];
@@ -63,10 +60,13 @@ char *const p = "a";
 
 - (void)configCollectionCellType:(CFEditCollectionCellType )type
 {
-    [self.contentView addGestureRecognizer:_pan];
     
     if (type == CFEditCollectionCellTypeWithDelete) {
 
+        _pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureDidPan:)];
+        _pan.delegate = self;
+        [self.contentView addGestureRecognizer:_pan];
+        
         if (deleteButton == nil) {
             deleteButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
             deleteButton.frame = CGRectMake(self.mj_w - kDeleteBtnWidth, 0, kDeleteBtnWidth, self.mj_h);
@@ -79,8 +79,7 @@ char *const p = "a";
     }
     else if (type == CFEditCollectionCellTypeWithNone)
     {
-        //点击手势保留
-        [self.contentView removeGestureRecognizer:_pan];
+
     }
 }
 
@@ -141,7 +140,7 @@ char *const p = "a";
                     panGesture.view.mj_x = translation.x;
                     
                 }
-                //左滑未松开然后又向右滑动
+                //左滑未松开然后又向左滑动
                 else if (ABS(translation.x) <= 30 &&
                          _status == CFEditCollectionCellStatusWithEdit)
                 {
@@ -155,7 +154,7 @@ char *const p = "a";
                     _status == CFEditCollectionCellStatusWithEdit) {
                     panGesture.view.mj_x = - (kDeleteBtnWidth*1 - translation.x);
                 }
-                //右滑未松开然后又向左滑动
+                //左滑滑未松开然后又向右滑动
                 else if (ABS(translation.x) <= 30 &&
                          _status == CFEditCollectionCellStatusWithNormal &&
                          panGesture.view.mj_x != 0)

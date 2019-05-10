@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.view.backgroundColor = [UIColor redColor];
+    
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 20)];
     label.font = SYSTEMFONT(16);
     label.textColor = KDarkTextColor;
