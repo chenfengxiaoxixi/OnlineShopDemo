@@ -25,8 +25,8 @@ class CFHomePageController: CFBaseController,UICollectionViewDelegate,UICollecti
         
         // Do any additional setup after loading the view.
     }
-
-    func setUI() {
+    
+    open func setUI() {
         
         searchBtn = UIButton(type: .custom)
         searchBtn.frame = CGRect(x: 20, y: STATUSBAR_HEIGHT + 5, width: SCREEN_WIDTH - 40, height: 30)

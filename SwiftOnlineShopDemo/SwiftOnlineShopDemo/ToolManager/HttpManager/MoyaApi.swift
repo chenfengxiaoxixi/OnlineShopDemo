@@ -33,7 +33,7 @@ enum MoyaApi {
 extension MoyaApi : TargetType {
     
     var baseURL: URL {
-        return URL.init(string: "")!
+        return URL.init(string: "hostname")!//填写自己的主机地址
     }
     
     var path: String {
