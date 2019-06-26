@@ -206,14 +206,14 @@
         reusableview = headerView;
         reusableview.backgroundColor = kRedColor;
     }
-
+    
     return reusableview;
 }
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-  return CGSizeMake(_rightCollectionView.mj_w, _rightCollectionView.mj_w/16*7);
+    return CGSizeMake(_rightCollectionView.mj_w, _rightCollectionView.mj_w/16*7);
 }
 
 #pragma mark -- UICollectionViewDelegateFlowLayout
@@ -231,7 +231,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger itemCount = 3;
-
+    
     return CGSizeMake((_rightCollectionView.mj_w)/itemCount,(_rightCollectionView.mj_w)/itemCount + 50);
 }
 
@@ -253,13 +253,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

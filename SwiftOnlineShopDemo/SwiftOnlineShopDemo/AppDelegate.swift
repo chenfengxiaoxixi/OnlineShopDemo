@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         
-        
         //字典转模型列子，数组转模型列子
         let dic = ["name":"乘风","age":"19"]
         let dic2 = ["name":"乘风2","age":"20"]

@@ -10,8 +10,6 @@
 
 #define kDeleteBtnWidth 70
 
-char *const p = "a";
-
 @interface CFEditCollectionCell ()<UIGestureRecognizerDelegate>
 {
     CGPoint origin;
@@ -35,24 +33,9 @@ char *const p = "a";
         
         self.contentView.backgroundColor = kWhiteColor;
 
-        
         _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture:)];
         _tap.delegate = self;
         [self.contentView addGestureRecognizer:_tap];
-        
-//        const char* a; 其中const是距离a较远的，*离a比较近，此时可以记忆为*a是const的。不能修改*a,a[0],a->形式的变更。但是a本身可以指向其他字符串。
-//        char const * a; 其中const是距离a较远的，*离a比较近，此时可以记忆为*a是const的。不能修改*a,a[0],a->形式的变更。但是a本身可以指向其他字符串。
-//        char*const a; 其中const是距离a较近的，*离a比较远，此时可以记忆为a是const的。不可以修改a的值。但是*a,a[0],a->是可以进行访问的。
-        char * const a = "a"; // a是const
-        char const * b = "b"; // *b是const
-        const char * c = "c"; // *c是const
-        
-       // a = "d";  // × 非法
-        b = "d";  // 合法
-        c = "d";  // 合法
-        a[0] = 'e';   // 合法
-        //b[0] = 'e'; // × 非法
-        //c[0] = 'e'; // × 非法
         
     }
     return self;

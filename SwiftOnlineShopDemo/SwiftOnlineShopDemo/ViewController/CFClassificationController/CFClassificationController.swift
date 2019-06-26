@@ -112,19 +112,26 @@ class CFClassificationController: CFBaseController,UITableViewDelegate,UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "CellIdentifier")
-        cell.selectionStyle = .none;
-        cell.textLabel?.text = leftData[indexPath.row] as? String
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier")
+        
+        if cell == nil {
+            cell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "CellIdentifier")
+        }
+        
+        
+        cell?.selectionStyle = .none;
+        cell?.textLabel?.text = leftData[indexPath.row] as? String
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: 16)
         if selectIndex == indexPath.row {
-            cell.backgroundColor = UIColor.white;
+            cell?.backgroundColor = UIColor.white;
         }
         else
         {
-            cell.backgroundColor = BACKGROUND_VIEW_COLOR;
+            cell?.backgroundColor = BACKGROUND_VIEW_COLOR;
         }
         
-        return cell
+        return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

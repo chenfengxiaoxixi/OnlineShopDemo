@@ -40,6 +40,9 @@
 #define KDarkTextColor      [UIColor colorOfHex:0x333333]
 #define KGrayTextColor      [UIColor colorOfHex:0x999999]
 
+#define random(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define randomColor random(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
 // MainScreen Height&Width
 #define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
 #define Main_Screen_Width       [[UIScreen mainScreen] bounds].size.width
