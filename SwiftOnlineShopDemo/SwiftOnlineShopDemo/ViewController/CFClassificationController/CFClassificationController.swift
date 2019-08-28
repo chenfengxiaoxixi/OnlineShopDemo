@@ -63,7 +63,11 @@ class CFClassificationController: CFBaseController,UITableViewDelegate,UITableVi
         let total_offset = leftTableView.contentSize.height - leftTableView.mj_h//总偏移
 
         //44为cell高度,乘以3表示点击下面三个时偏移
-        if rect.origin.y - leftTableView.mj_offsetY >= leftTableView.mj_h - 44 * 3 - 1 {
+        
+        let offset: CGFloat = rect.origin.y - leftTableView.mj_offsetY
+        let height: CGFloat = leftTableView.mj_h - 44 * 3 - 1
+        
+        if offset >= height {
             
             let contentOffset_y = leftTableView.mj_offsetY + 44 * 3
             
