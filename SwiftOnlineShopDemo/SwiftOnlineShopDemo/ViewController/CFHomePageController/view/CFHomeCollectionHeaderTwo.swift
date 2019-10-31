@@ -10,7 +10,6 @@ import UIKit
 
 class CFHomeCollectionHeaderTwo: UICollectionReusableView,GYRollingNoticeViewDataSource, GYRollingNoticeViewDelegate {
     
-    
     var arr1: Array<Any>!
     var noticeView : GYRollingNoticeView!
     

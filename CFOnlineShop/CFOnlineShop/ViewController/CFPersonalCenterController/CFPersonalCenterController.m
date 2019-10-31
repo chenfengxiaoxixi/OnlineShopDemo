@@ -110,7 +110,7 @@
 #pragma mark - UIScrollViewDelegate
 
 //scrollView的方法视图滑动时 实时调用
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     CGPoint offset = scrollView.contentOffset;
     NSLog(@"%lf",offset.y);
@@ -118,6 +118,10 @@
     if (offset.y < -200) {
         bgImageView.mj_y = offset.y;
         bgImageView.mj_h = ABS(offset.y);
+    } else if (offset.y > -200 && offset.y < 0) {
+        
+        bgImageView.mj_y = offset.y;
+        bgImageView.mj_h = 200 - (200 - ABS(offset.y));
     }
     
 }

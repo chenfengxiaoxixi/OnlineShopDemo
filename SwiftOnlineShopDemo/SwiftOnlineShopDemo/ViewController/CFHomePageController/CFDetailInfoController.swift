@@ -16,7 +16,6 @@ class CFDetailInfoController: CFBaseController,CFSegmentedControlDataSource,CFSe
     var segmentTitles: Array<String>!
     var detailViewController: CFDetailViewController!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -87,7 +86,7 @@ class CFDetailInfoController: CFBaseController,CFSegmentedControlDataSource,CFSe
         
         //swift闭包循环引用的问题：unowned表示确认当前闭包self不会提前释放；weak表示当前闭包self有可能会出现提前释放的情况，详细解释请查看官方文档
         detailViewController.scrollViewDidScroll_Closure = {[unowned self] (scrollView:UIScrollView)  in
-            if scrollView == self.detailViewController.tableView{
+            if scrollView == self.detailViewController.tableView {
                 
                 if scrollView.mj_offsetY > 0 && scrollView.mj_offsetY < 60 {
                     

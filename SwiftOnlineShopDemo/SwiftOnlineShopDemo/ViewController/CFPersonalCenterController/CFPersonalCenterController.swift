@@ -82,12 +82,21 @@ class CFPersonalCenterController: CFBaseController,UITableViewDelegate,UITableVi
     // MARK: - UIScrollViewDelegate
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
+        if headerImageView == nil {
+            return
+        }
+        
         let offset = scrollView.contentOffset;
         print(offset.y);
         //偏移从-200开始
         if offset.y < -200 {
             headerImageView.mj_y = offset.y;
             headerImageView.mj_h = abs(offset.y);
+        }
+        else if offset.y > -200 && offset.y < 0 {
+            
+            headerImageView.mj_y = offset.y;
+            headerImageView.mj_h = 200 - (200 - abs(offset.y));
         }
         
     }

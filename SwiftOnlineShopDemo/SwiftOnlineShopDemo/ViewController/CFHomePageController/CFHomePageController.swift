@@ -168,7 +168,6 @@ class CFHomePageController: CFBaseController,UICollectionViewDelegate,UICollecti
         }
         
         return reusableview;
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -211,7 +210,6 @@ class CFHomePageController: CFBaseController,UICollectionViewDelegate,UICollecti
         if scrollView.mj_offsetY < 0 {
             headerOffsetY = scrollView.mj_offsetY;
         }
-        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

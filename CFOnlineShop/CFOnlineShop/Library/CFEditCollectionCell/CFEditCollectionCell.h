@@ -12,7 +12,6 @@ typedef NS_ENUM(NSInteger, CFEditCollectionCellType) {
     
     CFEditCollectionCellTypeWithNone = 0,
     CFEditCollectionCellTypeWithDelete,
-    
 };
 
 typedef NS_ENUM(NSInteger, CFEditCollectionCellStatus) {
