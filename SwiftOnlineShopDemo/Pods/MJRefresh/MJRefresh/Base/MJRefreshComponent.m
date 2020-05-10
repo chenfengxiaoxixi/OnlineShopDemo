@@ -136,7 +136,9 @@
     _state = state;
     
     // 加入主队列的目的是等setState:方法调用完毕、设置完文字后再去布局子控件
-    MJRefreshDispatchAsyncOnMainQueue([self setNeedsLayout];)
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setNeedsLayout];
+    });
 }
 
 #pragma mark 进入刷新状态
@@ -169,7 +171,9 @@
 #pragma mark 结束刷新状态
 - (void)endRefreshing
 {
-    MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateIdle;)
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.state = MJRefreshStateIdle;
+    });
 }
 
 - (void)endRefreshingWithCompletionBlock:(void (^)(void))completionBlock
@@ -224,7 +228,7 @@
 #pragma mark - 内部方法
 - (void)executeRefreshingCallback
 {
-    MJRefreshDispatchAsyncOnMainQueue({
+    dispatch_async(dispatch_get_main_queue(), ^{
         if (self.refreshingBlock) {
             self.refreshingBlock();
         }
@@ -234,7 +238,7 @@
         if (self.beginRefreshingCompletionBlock) {
             self.beginRefreshingCompletionBlock();
         }
-    })
+    });
 }
 @end
 
@@ -263,8 +267,8 @@
 #else
         
         stringWidth = [self.text sizeWithFont:self.font
-                            constrainedToSize:size
-                                lineBreakMode:NSLineBreakByCharWrapping].width;
+                             constrainedToSize:size
+                                 lineBreakMode:NSLineBreakByCharWrapping].width;
 #endif
     }
     return stringWidth;

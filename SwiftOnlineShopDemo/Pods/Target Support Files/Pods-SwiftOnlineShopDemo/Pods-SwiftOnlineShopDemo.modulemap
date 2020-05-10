@@ -1,4 +1,4 @@
-framework module Pods_SwiftOnlineShopDemo {
+module Pods_SwiftOnlineShopDemo {
   umbrella header "Pods-SwiftOnlineShopDemo-umbrella.h"
 
   export *

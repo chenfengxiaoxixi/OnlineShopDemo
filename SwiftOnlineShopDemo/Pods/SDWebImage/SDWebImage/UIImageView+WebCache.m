@@ -7,6 +7,9 @@
  */
 
 #import "UIImageView+WebCache.h"
+
+#if SD_UIKIT || SD_MAC
+
 #import "objc/runtime.h"
 #import "UIView+WebCacheOperation.h"
 #import "UIView+WebCache.h"
@@ -68,14 +71,15 @@
 
 - (void)sd_setAnimationImagesWithURLs:(nonnull NSArray<NSURL *> *)arrayOfURLs {
     [self sd_cancelCurrentAnimationImagesLoad];
+    __weak __typeof(self)wself = self;
+
     NSPointerArray *operationsArray = [self sd_animationOperationArray];
-    
+
     [arrayOfURLs enumerateObjectsUsingBlock:^(NSURL *logoImageURL, NSUInteger idx, BOOL * _Nonnull stop) {
-        __weak __typeof(self) wself = self;
         id <SDWebImageOperation> operation = [[SDWebImageManager sharedManager] loadImageWithURL:logoImageURL options:0 progress:nil completed:^(UIImage *image, NSData *data, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-            __strong typeof(wself) sself = wself;
-            if (!sself) return;
+            if (!wself) return;
             dispatch_main_async_safe(^{
+                __strong UIImageView *sself = wself;
                 [sself stopAnimating];
                 if (sself && image) {
                     NSMutableArray<UIImage *> *currentImages = [[sself animationImages] mutableCopy];
@@ -137,3 +141,5 @@ static char animationLoadOperationKey;
 #endif
 
 @end
+
+#endif

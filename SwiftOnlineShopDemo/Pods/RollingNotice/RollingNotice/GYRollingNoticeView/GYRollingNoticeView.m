@@ -9,21 +9,16 @@
 #import "GYRollingNoticeView.h"
 #import "GYNoticeViewCell.h"
 
-
-#define kGYNotiWeakSelf(type)  __weak typeof(type) weak##type = type;
-#define kGYNotiStrongSelf(type) __strong typeof(type) type = weak##type;
-
 @interface GYRollingNoticeView ()
-
 
 @property (nonatomic, strong) NSMutableDictionary *cellClsDict;
 @property (nonatomic, strong) NSMutableArray *reuseCells;
 
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) int currentIndex;
 @property (nonatomic, strong) GYNoticeViewCell *currentCell;
 @property (nonatomic, strong) GYNoticeViewCell *willShowCell;
-@property (nonatomic, assign) BOOL isAnimating;
-
+@property (nonatomic, strong) UITapGestureRecognizer *gyTapGesture;
 
 @end
 
@@ -33,7 +28,9 @@
 {
     self = [super init];
     if (self) {
-        [self setupNoticeViews];
+        self.clipsToBounds = YES;
+        _stayInterval = 2;
+        [self addGestureRecognizer:self.gyTapGesture];
     }
     return self;
 }
@@ -42,26 +39,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupNoticeViews];
+        self.clipsToBounds = YES;
+        _stayInterval = 2;
+        [self addGestureRecognizer:self.gyTapGesture];
     }
     return self;
 }
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setupNoticeViews];
-    }
-    return self;
-}
-
-- (void)setupNoticeViews
-{
-    self.clipsToBounds = YES;
-    _stayInterval = 2;
-    [self addGestureRecognizer:[self createTapGesture]];
-}
-
 
 
 - (void)registerClass:(nullable Class)cellClass forCellReuseIdentifier:(NSString *)identifier
@@ -131,17 +114,13 @@
     }
     
     
-    
+//    NSLog(@"_currentCell  %p", _currentCell);
     _willShowCell = [self.dataSource rollingNoticeView:self cellAtIndex:willShowIndex];
+//    NSLog(@"_willShowCell %p", _willShowCell);
+    
     _willShowCell.frame = CGRectMake(0, h, w, h);
     [self addSubview:_willShowCell];
     
-    
-    if (GYRollingDebugLog) {
-        NSLog(@"_currentCell  %p", _currentCell);
-        NSLog(@"_willShowCell %p", _willShowCell);
-    }
-
     [self.reuseCells removeObject:_currentCell];
     [self.reuseCells removeObject:_willShowCell];
     
@@ -171,7 +150,6 @@
         _timer = nil;
     }
     
-    _isAnimating = NO;
     _currentIndex = 0;
     [_currentCell removeFromSuperview];
     [_willShowCell removeFromSuperview];
@@ -183,33 +161,22 @@
 - (void)timerHandle
 {
 //    NSLog(@"-----------------------------------");
-    
-    if (self.isAnimating) return;
-    
     [self layoutCurrentCellAndWillShowCell];
     _currentIndex ++;
     
     float w = self.frame.size.width;
     float h = self.frame.size.height;
     
-    self.isAnimating = YES;
-    
-    kGYNotiWeakSelf(self);
     [UIView animateWithDuration:0.5 animations:^{
-        kGYNotiStrongSelf(self);
-        
-        self.currentCell.frame = CGRectMake(0, -h, w, h);
-        self.willShowCell.frame = CGRectMake(0, 0, w, h);
+        _currentCell.frame = CGRectMake(0, -h, w, h);
+        _willShowCell.frame = CGRectMake(0, 0, w, h);
     } completion:^(BOOL finished) {
-        kGYNotiStrongSelf(self);
-        
         // fixed bug: reload data when animate running
-        if (self.currentCell && self.willShowCell) {
-            [self.reuseCells addObject:self.currentCell];
-            [self.currentCell removeFromSuperview];
-            self.currentCell = self.willShowCell;
+        if (_currentCell && _willShowCell) {
+            [self.reuseCells addObject:_currentCell];
+            [_currentCell removeFromSuperview];
+            _currentCell = _willShowCell;
         }
-        self.isAnimating = NO;
     }];
 }
 
@@ -224,13 +191,6 @@
         [self.delegate didClickRollingNoticeView:self forIndex:_currentIndex];
     }
 }
-
-- (UITapGestureRecognizer *)createTapGesture
-{
-   return [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleCellTapAction)];
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event{}
 
 #pragma mark- lazy
 - (NSMutableDictionary *)cellClsDict
@@ -248,6 +208,12 @@
     }
     return _reuseCells;
 }
-
+- (UITapGestureRecognizer *)gyTapGesture
+{
+    if (nil == _gyTapGesture) {
+        _gyTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleCellTapAction)];
+    }
+    return _gyTapGesture;
+}
 
 @end

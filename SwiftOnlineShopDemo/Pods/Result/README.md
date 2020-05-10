@@ -28,11 +28,12 @@ func stringForKey(json: JSONObject, key: String) -> Result<String, JSONError> {
         return .failure(.noSuchKey(key))
     }
     
-    guard let value = value as? String else {
+    if let value = value as? String {
+        return .success(value)
+    }
+    else {
         return .failure(.typeMismatch)
     }
-
-    return .success(value)
 }
 ```
 
@@ -77,7 +78,7 @@ let idResult = intForKey(json, key:"id").map { id in String(id) }
 
 Here, the final result is either the id as a `String`, or carries over the `failure` from the previous result.
 
-`flatMap` is similar to `map` in that it transforms the `Result` into another `Result`. However, the function passed into `flatMap` must return a `Result`.
+`flatMap` is similar to `map` in that in transforms the `Result` into another `Result`. However, the function passed into `flatMap` must return a `Result`.
 
 An in depth discussion of `map` and `flatMap` is beyond the scope of this documentation. If you would like a deeper understanding, read about functors and monads. This article is a good place to [start](http://www.javiersoto.me/post/106875422394).
 
@@ -93,7 +94,7 @@ An in depth discussion of `map` and `flatMap` is beyond the scope of this docume
 ### Cocoapods
 
 ```ruby
-pod 'Result', '~> 4.0.0'
+pod 'Result', '~> 3.0.0'
 ```
 
 ### Swift Package Manager
@@ -106,7 +107,7 @@ let package = Package(
     targets: [],
     dependencies: [
         .Package(url: "https://github.com/antitypical/Result.git",
-                 majorVersion: 4)
+                 majorVersion: 3)
     ]
 )
 ```

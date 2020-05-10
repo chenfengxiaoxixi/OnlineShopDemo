@@ -1,7 +1,7 @@
 #if os(iOS) || os(watchOS) || os(tvOS)
     import UIKit.UIImage
     public typealias ImageType = UIImage
-#elseif os(macOS)
+#elseif os(OSX)
     import AppKit.NSImage
     public typealias ImageType = NSImage
 #endif

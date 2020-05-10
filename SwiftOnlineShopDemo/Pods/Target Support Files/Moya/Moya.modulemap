@@ -1,4 +1,4 @@
-framework module Moya {
+module Moya {
   umbrella header "Moya-umbrella.h"
 
   export *

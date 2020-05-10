@@ -12,7 +12,6 @@
 #import "NSData+ImageContentType.h"
 #import "UIImage+MultiFormat.h"
 #import "SDWebImageCoderHelper.h"
-#import "SDAnimatedImageRep.h"
 
 @implementation SDWebImageGIFCoder
 
@@ -36,10 +35,7 @@
     }
     
 #if SD_MAC
-    SDAnimatedImageRep *imageRep = [[SDAnimatedImageRep alloc] initWithData:data];
-    NSImage *animatedImage = [[NSImage alloc] initWithSize:imageRep.size];
-    [animatedImage addRepresentation:imageRep];
-    return animatedImage;
+    return [[UIImage alloc] initWithData:data];
 #else
     
     CGImageSourceRef source = CGImageSourceCreateWithData((__bridge CFDataRef)data, NULL);
@@ -62,18 +58,25 @@
             }
             
             float duration = [self sd_frameDurationAtIndex:i source:source];
-            UIImage *image = [[UIImage alloc] initWithCGImage:imageRef];
+#if SD_WATCH
+            CGFloat scale = 1;
+            scale = [WKInterfaceDevice currentDevice].screenScale;
+#elif SD_UIKIT
+            CGFloat scale = 1;
+            scale = [UIScreen mainScreen].scale;
+#endif
+            UIImage *image = [UIImage imageWithCGImage:imageRef scale:scale orientation:UIImageOrientationUp];
             CGImageRelease(imageRef);
             
             SDWebImageFrame *frame = [SDWebImageFrame frameWithImage:image duration:duration];
             [frames addObject:frame];
         }
         
-        NSUInteger loopCount = 1;
+        NSUInteger loopCount = 0;
         NSDictionary *imageProperties = (__bridge_transfer NSDictionary *)CGImageSourceCopyProperties(source, nil);
-        NSDictionary *gifProperties = [imageProperties valueForKey:(__bridge NSString *)kCGImagePropertyGIFDictionary];
+        NSDictionary *gifProperties = [imageProperties valueForKey:(__bridge_transfer NSString *)kCGImagePropertyGIFDictionary];
         if (gifProperties) {
-            NSNumber *gifLoopCount = [gifProperties valueForKey:(__bridge NSString *)kCGImagePropertyGIFLoopCount];
+            NSNumber *gifLoopCount = [gifProperties valueForKey:(__bridge_transfer NSString *)kCGImagePropertyGIFLoopCount];
             if (gifLoopCount != nil) {
                 loopCount = gifLoopCount.unsignedIntegerValue;
             }
@@ -81,7 +84,6 @@
         
         animatedImage = [SDWebImageCoderHelper animatedImageWithFrames:frames];
         animatedImage.sd_imageLoopCount = loopCount;
-        animatedImage.sd_imageFormat = SDImageFormatGIF;
     }
     
     CFRelease(source);
@@ -93,9 +95,6 @@
 - (float)sd_frameDurationAtIndex:(NSUInteger)index source:(CGImageSourceRef)source {
     float frameDuration = 0.1f;
     CFDictionaryRef cfFrameProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil);
-    if (!cfFrameProperties) {
-        return frameDuration;
-    }
     NSDictionary *frameProperties = (__bridge NSDictionary *)cfFrameProperties;
     NSDictionary *gifProperties = frameProperties[(NSString *)kCGImagePropertyGIFDictionary];
     
@@ -159,14 +158,14 @@
     } else {
         // for animated GIF images
         NSUInteger loopCount = image.sd_imageLoopCount;
-        NSDictionary *gifProperties = @{(__bridge NSString *)kCGImagePropertyGIFDictionary: @{(__bridge NSString *)kCGImagePropertyGIFLoopCount : @(loopCount)}};
+        NSDictionary *gifProperties = @{(__bridge_transfer NSString *)kCGImagePropertyGIFDictionary: @{(__bridge_transfer NSString *)kCGImagePropertyGIFLoopCount : @(loopCount)}};
         CGImageDestinationSetProperties(imageDestination, (__bridge CFDictionaryRef)gifProperties);
         
         for (size_t i = 0; i < frames.count; i++) {
             SDWebImageFrame *frame = frames[i];
             float frameDuration = frame.duration;
             CGImageRef frameImageRef = frame.image.CGImage;
-            NSDictionary *frameProperties = @{(__bridge NSString *)kCGImagePropertyGIFDictionary : @{(__bridge NSString *)kCGImagePropertyGIFDelayTime : @(frameDuration)}};
+            NSDictionary *frameProperties = @{(__bridge_transfer NSString *)kCGImagePropertyGIFDictionary : @{(__bridge_transfer NSString *)kCGImagePropertyGIFUnclampedDelayTime : @(frameDuration)}};
             CGImageDestinationAddImage(imageDestination, frameImageRef, (__bridge CFDictionaryRef)frameProperties);
         }
     }

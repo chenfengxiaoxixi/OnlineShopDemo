@@ -14,14 +14,14 @@
 typedef void (^MJClassesEnumeration)(Class c, BOOL *stop);
 
 /** 这个数组中的属性名才会进行字典和模型的转换 */
-typedef NSArray * (^MJAllowedPropertyNames)(void);
+typedef NSArray * (^MJAllowedPropertyNames)();
 /** 这个数组中的属性名才会进行归档 */
-typedef NSArray * (^MJAllowedCodingPropertyNames)(void);
+typedef NSArray * (^MJAllowedCodingPropertyNames)();
 
 /** 这个数组中的属性名将会被忽略：不进行字典和模型的转换 */
-typedef NSArray * (^MJIgnoredPropertyNames)(void);
+typedef NSArray * (^MJIgnoredPropertyNames)();
 /** 这个数组中的属性名将会被忽略：不进行归档 */
-typedef NSArray * (^MJIgnoredCodingPropertyNames)(void);
+typedef NSArray * (^MJIgnoredCodingPropertyNames)();
 
 /**
  * 类相关的扩展
@@ -86,5 +86,5 @@ typedef NSArray * (^MJIgnoredCodingPropertyNames)(void);
 + (NSMutableArray *)mj_totalIgnoredCodingPropertyNames;
 
 #pragma mark - 内部使用
-+ (void)mj_setupBlockReturnValue:(id (^)(void))block key:(const char *)key;
++ (void)mj_setupBlockReturnValue:(id (^)())block key:(const char *)key;
 @end

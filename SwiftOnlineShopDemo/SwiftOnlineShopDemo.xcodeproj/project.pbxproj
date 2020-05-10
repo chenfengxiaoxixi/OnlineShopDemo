@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BFA6C02F3B802D476807630 /* Pods_SwiftOnlineShopDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFF2C970709911445697754 /* Pods_SwiftOnlineShopDemo.framework */; };
 		0C5FECE8226EDBCC00D0E27E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5FECE7226EDBCC00D0E27E /* AppDelegate.swift */; };
 		0C5FECED226EDBCC00D0E27E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C5FECEB226EDBCC00D0E27E /* Main.storyboard */; };
 		0C5FECEF226EDBCE00D0E27E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C5FECEE226EDBCE00D0E27E /* Assets.xcassets */; };
@@ -39,6 +38,7 @@
 		0CF1C6FA2272E867007F7B16 /* CFOthersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6F92272E867007F7B16 /* CFOthersController.swift */; };
 		0CF1C6FD2272EA1E007F7B16 /* CFSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF1C6FC2272EA1E007F7B16 /* CFSegmentedControl.swift */; };
 		0CFA6FF72281580F00D2C17C /* MoyaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFA6FF62281580F00D2C17C /* MoyaApi.swift */; };
+		894C8F3DE4F4B956D1278DE0 /* libPods-SwiftOnlineShopDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87277C42D11525ED95935D2D /* libPods-SwiftOnlineShopDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +80,8 @@
 		0CF1C6FC2272EA1E007F7B16 /* CFSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CFSegmentedControl.swift; sourceTree = "<group>"; };
 		0CFA6FF62281580F00D2C17C /* MoyaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaApi.swift; sourceTree = "<group>"; };
 		20A56DBB40C6D584191978D2 /* Pods-SwiftOnlineShopDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOnlineShopDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo.release.xcconfig"; sourceTree = "<group>"; };
-		4DFF2C970709911445697754 /* Pods_SwiftOnlineShopDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftOnlineShopDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5652A6BBE06B38976491922E /* Pods-SwiftOnlineShopDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftOnlineShopDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		87277C42D11525ED95935D2D /* libPods-SwiftOnlineShopDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftOnlineShopDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BFA6C02F3B802D476807630 /* Pods_SwiftOnlineShopDemo.framework in Frameworks */,
+				894C8F3DE4F4B956D1278DE0 /* libPods-SwiftOnlineShopDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +321,7 @@
 		E565104031C151C1C3175564 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4DFF2C970709911445697754 /* Pods_SwiftOnlineShopDemo.framework */,
+				87277C42D11525ED95935D2D /* libPods-SwiftOnlineShopDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 				0C5FECE0226EDBCC00D0E27E /* Sources */,
 				0C5FECE1226EDBCC00D0E27E /* Frameworks */,
 				0C5FECE2226EDBCC00D0E27E /* Resources */,
-				8CA094EE4F314253F4966DFD /* [CP] Embed Pods Frameworks */,
+				3867C3E7C243B7338FA1DD19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,36 +404,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8CA094EE4F314253F4966DFD /* [CP] Embed Pods Frameworks */ = {
+		3867C3E7C243B7338FA1DD19 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
-				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RollingNotice/RollingNotice.framework",
-				"${BUILT_PRODUCTS_DIR}/SDCycleScrollView/SDCycleScrollView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RollingNotice.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDCycleScrollView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftOnlineShopDemo/Pods-SwiftOnlineShopDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B23AF5C298D16B8DF9165833 /* [CP] Check Pods Manifest.lock */ = {
@@ -652,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.SwiftOnlineShopDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.SwiftOnlineShopDemoCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftOnlineShopDemo/swift_oc_briding_Header.h";
 				SWIFT_VERSION = 4.2;
@@ -683,7 +668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.SwiftOnlineShopDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenfeng.SwiftOnlineShopDemoCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SwiftOnlineShopDemo/swift_oc_briding_Header.h";
 				SWIFT_VERSION = 4.2;

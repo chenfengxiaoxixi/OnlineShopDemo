@@ -7,6 +7,9 @@
  */
 
 #import "SDWebImageCompat.h"
+
+#if SD_UIKIT || SD_MAC
+
 #import "SDWebImageManager.h"
 
 /**
@@ -27,7 +30,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
  
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier]
+                 autorelease];
     }
  
     // Here we use the provided sd_setImageWithURL: method to load the web image
@@ -151,9 +155,7 @@
                  completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 /**
- * Set the imageView `image` with an `url` and custom options. The placeholder image is from previous cached image and will use the provided one instead if the query failed.
- * This method was designed to ensure that placeholder and query cache process happened in the same runloop to avoid flashing on cell during two `setImage:` call. But it's really misunderstanding and deprecated.
- * This can be done by using `sd_setImageWithURL:` with `SDWebImageQueryDiskSync`. But take care that if the memory cache missed, query disk cache synchronously may reduce the frame rate
+ * Set the imageView `image` with an `url` and optionally a placeholder image.
  *
  * The download is asynchronous and cached.
  *
@@ -167,13 +169,12 @@
  *                       is nil and the second parameter may contain an NSError. The third parameter is a Boolean
  *                       indicating if the image was retrieved from the local cache or from the network.
  *                       The fourth parameter is the original image url.
- * @deprecated consider using `SDWebImageQueryDiskSync` options with `sd_setImageWithURL:` instead
  */
 - (void)sd_setImageWithPreviousCachedImageWithURL:(nullable NSURL *)url
                                  placeholderImage:(nullable UIImage *)placeholder
                                           options:(SDWebImageOptions)options
                                          progress:(nullable SDWebImageDownloaderProgressBlock)progressBlock
-                                        completed:(nullable SDExternalCompletionBlock)completedBlock __deprecated_msg("This method is misunderstanding and deprecated, consider using `SDWebImageQueryDiskSync` options with `sd_setImageWithURL:` instead");
+                                        completed:(nullable SDExternalCompletionBlock)completedBlock;
 
 #if SD_UIKIT
 
@@ -191,3 +192,5 @@
 #endif
 
 @end
+
+#endif

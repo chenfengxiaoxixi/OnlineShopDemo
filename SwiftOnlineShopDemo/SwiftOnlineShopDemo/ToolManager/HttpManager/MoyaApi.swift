@@ -9,20 +9,20 @@
 import Foundation
 import Moya
 
-let requestTimeoutClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider<MoyaApi>.RequestResultClosure) in
-    do {
-        var request = try endpoint.urlRequest()
-        request.timeoutInterval = 10
-        done(.success(request))
-    } catch {
-        return
-    }
-}
+//let requestTimeoutClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider<MoyaApi>.RequestResultClosure) in
+//    do {
+//        var request = try endpoint.urlRequest()
+//        request.timeoutInterval = 10
+//        done(.success(request))
+//    } catch {
+//        return
+//    }
+//}
 
 //普通的provider对象
 let provider = MoyaProvider<MoyaApi>()
 //设置了超时时间的provider对象
-let requestTimeoutProvider = MoyaProvider<MoyaApi>(requestClosure: requestTimeoutClosure)
+//let requestTimeoutProvider = MoyaProvider<MoyaApi>(requestClosure: requestTimeoutClosure)
 
 //请求方法
 enum MoyaApi {

@@ -2,10 +2,10 @@ import Foundation
 
 internal extension URLRequest {
 
-    mutating func encoded(encodable: Encodable, encoder: JSONEncoder = JSONEncoder()) throws -> URLRequest {
+    mutating func encoded(encodable: Encodable) throws -> URLRequest {
         do {
             let encodable = AnyEncodable(encodable)
-            httpBody = try encoder.encode(encodable)
+            httpBody = try JSONEncoder().encode(encodable)
 
             let contentTypeHeaderName = "Content-Type"
             if value(forHTTPHeaderField: contentTypeHeaderName) == nil {

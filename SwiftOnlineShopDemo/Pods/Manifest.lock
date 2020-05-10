@@ -1,19 +1,19 @@
 PODS:
-  - Alamofire (4.8.2)
-  - MJExtension (3.0.16)
-  - MJRefresh (3.1.16)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - Alamofire (4.6.0)
+  - MJExtension (3.0.13)
+  - MJRefresh (3.1.15.1)
+  - Moya (10.0.1):
+    - Moya/Core (= 10.0.1)
+  - Moya/Core (10.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
-  - Result (4.1.0)
-  - RollingNotice (1.0.6)
+    - Result (~> 3.0)
+  - Result (3.2.4)
+  - RollingNotice (1.0.2)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
+  - SDWebImage (4.2.3):
+    - SDWebImage/Core (= 4.2.3)
+  - SDWebImage/Core (4.2.3)
 
 DEPENDENCIES:
   - MJExtension (~> 3.0.10)
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.75)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - MJExtension
     - MJRefresh
@@ -34,15 +34,15 @@ SPEC REPOS:
     - SDWebImage
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  MJExtension: 54dbbf6ee728f1a88e9aad904353d007831c7847
-  MJRefresh: 7798e16e53a5ef7f332dd05b27664db4e29530fd
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RollingNotice: a4919e3e79f420f7bb8ee9d22ee509470b7ccdce
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
+  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RollingNotice: 792a2712563d00191eb519c86b4825401a302c51
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
 
-PODFILE CHECKSUM: 84e30e6286420b050ec761d0959b7ad8dfab279c
+PODFILE CHECKSUM: fa6488f0978e6eef3be39d2a71b58ad9d792b355
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.1

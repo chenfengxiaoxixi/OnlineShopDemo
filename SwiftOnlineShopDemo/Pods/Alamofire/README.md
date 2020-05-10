@@ -4,7 +4,7 @@
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Alamofire.svg)](https://img.shields.io/cocoapods/v/Alamofire.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/Alamofire.svg?style=flat)](https://alamofire.github.io/Alamofire)
-[![Twitter](https://img.shields.io/badge/twitter-@AlamofireSF-blue.svg?style=flat)](https://twitter.com/AlamofireSF)
+[![Twitter](https://img.shields.io/badge/twitter-@AlamofireSF-blue.svg?style=flat)](http://twitter.com/AlamofireSF)
 [![Gitter](https://badges.gitter.im/Alamofire/Alamofire.svg)](https://gitter.im/Alamofire/Alamofire?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 Alamofire is an HTTP networking library written in Swift.
@@ -15,16 +15,16 @@ Alamofire is an HTTP networking library written in Swift.
 - [Migration Guides](#migration-guides)
 - [Communication](#communication)
 - [Installation](#installation)
-- [Usage](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md)
-    - **Intro -** [Making a Request](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#making-a-request), [Response Handling](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-handling), [Response Validation](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-validation), [Response Caching](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#response-caching)
-	- **HTTP -** [HTTP Methods](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#http-methods), [Parameter Encoding](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#parameter-encoding), [HTTP Headers](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#http-headers), [Authentication](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#authentication)
-	- **Large Data -** [Downloading Data to a File](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#downloading-data-to-a-file), [Uploading Data to a Server](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#uploading-data-to-a-server)
-	- **Tools -** [Statistical Metrics](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#statistical-metrics), [cURL Command Output](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Usage.md#curl-command-output)
-- [Advanced Usage](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md)
-	- **URL Session -** [Session Manager](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-manager), [Session Delegate](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#session-delegate), [Request](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#request)
-	- **Routing -** [Routing Requests](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#routing-requests), [Adapting and Retrying Requests](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#adapting-and-retrying-requests)
-	- **Model Objects -** [Custom Response Serialization](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#custom-response-serialization)
-	- **Connection -** [Security](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#security), [Network Reachability](https://github.com/Alamofire/Alamofire/blob/master/Documentation/AdvancedUsage.md#network-reachability)
+- [Usage](Documentation/Usage.md)
+    - **Intro -** [Making a Request](Documentation/Usage.md#making-a-request), [Response Handling](Documentation/Usage.md#response-handling), [Response Validation](Documentation/Usage.md#response-validation), [Response Caching](Documentation/Usage.md#response-caching)
+	- **HTTP -** [HTTP Methods](Documentation/Usage.md#http-methods), [Parameter Encoding](Documentation/Usage.md#parameter-encoding), [HTTP Headers](Documentation/Usage.md#http-headers), [Authentication](Documentation/Usage.md#authentication)
+	- **Large Data -** [Downloading Data to a File](Documentation/Usage.md#downloading-data-to-a-file), [Uploading Data to a Server](Documentation/Usage.md#uploading-data-to-a-server)
+	- **Tools -** [Statistical Metrics](Documentation/Usage.md#statistical-metrics), [cURL Command Output](Documentation/Usage.md#curl-command-output)
+- [Advanced Usage](Documentation/AdvancedUsage.md)
+	- **URL Session -** [Session Manager](Documentation/AdvancedUsage.md#session-manager), [Session Delegate](Documentation/AdvancedUsage.md#session-delegate), [Request](Documentation/AdvancedUsage.md#request)
+	- **Routing -** [Routing Requests](Documentation/AdvancedUsage.md#routing-requests), [Adapting and Retrying Requests](Documentation/AdvancedUsage.md#adapting-and-retrying-requests)
+	- **Model Objects -** [Custom Response Serialization](Documentation/AdvancedUsage.md#custom-response-serialization)
+	- **Connection -** [Security](Documentation/AdvancedUsage.md#security), [Network Reachability](Documentation/AdvancedUsage.md#network-reachability)
 - [Open Radars](#open-radars)
 - [FAQ](#faq)
 - [Credits](#credits)
@@ -67,19 +67,18 @@ In order to keep Alamofire focused specifically on core networking implementatio
 - [Alamofire 2.0 Migration Guide](https://github.com/Alamofire/Alamofire/blob/master/Documentation/Alamofire%202.0%20Migration%20Guide.md)
 
 ## Communication
-- If you **need help with making network requests**, use [Stack Overflow](https://stackoverflow.com/questions/tagged/alamofire) and tag `alamofire`.
-- If you need to **find or understand an API**, check [our documentation](http://alamofire.github.io/Alamofire/) or [Apple's documentation for `URLSession`](https://developer.apple.com/documentation/foundation/url_loading_system), on top of which Alamofire is built.
-- If you need **help with an Alamofire feature**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire).
-- If you'd like to **discuss Alamofire best practices**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire).
-- If you'd like to **discuss a feature request**, use [our forum on swift.org](https://forums.swift.org/c/related-projects/alamofire). 
-- If you **found a bug**, open an issue and follow the guide. The more detail the better!
+
+- If you **need help**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/alamofire). (Tag 'alamofire')
+- If you'd like to **ask a general question**, use [Stack Overflow](http://stackoverflow.com/questions/tagged/alamofire).
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
 - If you **want to contribute**, submit a pull request.
 
 ## Installation
 
 ### CocoaPods
 
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
@@ -95,7 +94,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Alamofire', '~> 4.7'
+    pod 'Alamofire', '~> 4.5'
 end
 ```
 
@@ -109,7 +108,7 @@ $ pod install
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
 
-You can install Carthage with [Homebrew](https://brew.sh/) using the following command:
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
 
 ```bash
 $ brew update
@@ -119,7 +118,7 @@ $ brew install carthage
 To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Alamofire/Alamofire" ~> 4.7
+github "Alamofire/Alamofire" ~> 4.5
 ```
 
 Run `carthage update` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
@@ -158,7 +157,7 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
   $ git init
   ```
 
-- Add Alamofire as a git [submodule](https://git-scm.com/docs/git-submodule) by running the following command:
+- Add Alamofire as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
 
   ```bash
   $ git submodule add https://github.com/Alamofire/Alamofire.git
@@ -191,7 +190,6 @@ The following radars have some effect on the current implementation of Alamofire
 - [`rdar://21349340`](http://www.openradar.me/radar?id=5517037090635776) - Compiler throwing warning due to toll-free bridging issue in test case
 - `rdar://26870455` - Background URL Session Configurations do not work in the simulator
 - `rdar://26849668` - Some URLProtocol APIs do not properly handle `URLRequest`
-- [`rdar://36082113`](http://openradar.appspot.com/radar?id=4942308441063424) - `URLSessionTaskMetrics` failing to link on watchOS 3.0+
 
 ## Resolved Radars
 
@@ -221,22 +219,17 @@ If you believe you have identified a security vulnerability with Alamofire, you 
 
 ## Donations
 
-The [ASF](https://github.com/Alamofire/Foundation#members) is looking to raise money to officially stay registered as a federal non-profit organization.
-Registering will allow us members to gain some legal protections and also allow us to put donations to use, tax free.
-Donating to the ASF will enable us to:
+The [ASF](https://github.com/Alamofire/Foundation#members) is looking to raise money to officially register as a federal non-profit organization. Registering will allow us members to gain some legal protections and also allow us to put donations to use, tax free. Donating to the ASF will enable us to:
 
+- Pay our legal fees to register as a federal non-profit organization
 - Pay our yearly legal fees to keep the non-profit in good status
 - Pay for our mail servers to help us stay on top of all questions and security issues
 - Potentially fund test servers to make it easier for us to test the edge cases
 - Potentially fund developers to work on one of our projects full-time
 
-The community adoption of the ASF libraries has been amazing.
-We are greatly humbled by your enthusiasm around the projects, and want to continue to do everything we can to move the needle forward.
-With your continued support, the ASF will be able to improve its reach and also provide better legal safety for the core members.
-If you use any of our libraries for work, see if your employers would be interested in donating.
-Any amount you can donate today to help us reach our goal would be greatly appreciated.
+The community adoption of the ASF libraries has been amazing. We are greatly humbled by your enthusiasm around the projects, and want to continue to do everything we can to move the needle forward. With your continued support, the ASF will be able to improve its reach and also provide better legal safety for the core members. If you use any of our libraries for work, see if your employers would be interested in donating. Our initial goal is to raise $1000 to get all our legal ducks in a row and kickstart this campaign. Any amount you can donate today to help us reach our goal would be greatly appreciated.
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W34WPEE74APJQ)
+<a href='https://pledgie.com/campaigns/31474'><img alt='Click here to lend your support to: Alamofire Software Foundation and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/31474.png?skin_name=chrome' border='0' ></a>
 
 ## License
 

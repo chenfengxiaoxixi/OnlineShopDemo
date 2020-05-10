@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// 调试cell内存地址log
-static BOOL GYRollingDebugLog = NO;
-
 @interface GYNoticeViewCell : UIView
 
 @property (nonatomic, readonly, strong) UIView *contentView;

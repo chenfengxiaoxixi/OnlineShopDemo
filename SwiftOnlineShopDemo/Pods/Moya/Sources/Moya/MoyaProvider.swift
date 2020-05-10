@@ -7,39 +7,27 @@ public typealias Completion = (_ result: Result<Moya.Response, MoyaError>) -> Vo
 /// Closure to be executed when progress changes.
 public typealias ProgressBlock = (_ progress: ProgressResponse) -> Void
 
-/// A type representing the progress of a request.
 public struct ProgressResponse {
-
-    /// The optional response of the request.
     public let response: Response?
-
-    /// An object that conveys ongoing progress for a given request.
     public let progressObject: Progress?
 
-    /// Initializes a `ProgressResponse`.
     public init(progress: Progress? = nil, response: Response? = nil) {
         self.progressObject = progress
         self.response = response
     }
 
-    /// The fraction of the overall work completed by the progress object.
     public var progress: Double {
         return progressObject?.fractionCompleted ?? 1.0
     }
 
-    /// A Boolean value stating whether the request is completed.
     public var completed: Bool {
         return progress == 1.0 && response != nil
     }
 }
 
-/// A protocol representing a minimal interface for a MoyaProvider.
-/// Used by the reactive provider extensions.
-public protocol MoyaProviderType: AnyObject {
-
+public protocol MoyaProviderType: class {
     associatedtype Target: TargetType
 
-    /// Designated request-making method. Returns a `Cancellable` token to cancel the request later.
     func request(_ target: Target, callbackQueue: DispatchQueue?, progress: Moya.ProgressBlock?, completion: @escaping Moya.Completion) -> Cancellable
 }
 
@@ -47,37 +35,29 @@ public protocol MoyaProviderType: AnyObject {
 open class MoyaProvider<Target: TargetType>: MoyaProviderType {
 
     /// Closure that defines the endpoints for the provider.
-    public typealias EndpointClosure = (Target) -> Endpoint
+    public typealias EndpointClosure = (Target) -> Endpoint<Target>
 
-    /// Closure that decides if and what request should be performed.
+    /// Closure that decides if and what request should be performed
     public typealias RequestResultClosure = (Result<URLRequest, MoyaError>) -> Void
 
     /// Closure that resolves an `Endpoint` into a `RequestResult`.
-    public typealias RequestClosure = (Endpoint, @escaping RequestResultClosure) -> Void
+    public typealias RequestClosure = (Endpoint<Target>, @escaping RequestResultClosure) -> Void
 
     /// Closure that decides if/how a request should be stubbed.
     public typealias StubClosure = (Target) -> Moya.StubBehavior
 
-    /// A closure responsible for mapping a `TargetType` to an `EndPoint`.
-    public let endpointClosure: EndpointClosure
+    open let endpointClosure: EndpointClosure
+    open let requestClosure: RequestClosure
+    open let stubClosure: StubClosure
+    open let manager: Manager
 
-    /// A closure deciding if and what request should be performed.
-    public let requestClosure: RequestClosure
+    /// A list of plugins
+    /// e.g. for logging, network activity indicator or credentials
+    open let plugins: [PluginType]
 
-    /// A closure responsible for determining the stubbing behavior
-    /// of a request for a given `TargetType`.
-    public let stubClosure: StubClosure
+    open let trackInflights: Bool
 
-    /// The manager for the session.
-    public let manager: Manager
-
-    /// A list of plugins.
-    /// e.g. for logging, network activity indicator or credentials.
-    public let plugins: [PluginType]
-
-    public let trackInflights: Bool
-
-    open internal(set) var inflightRequests: [Endpoint: [Moya.Completion]] = [:]
+    open internal(set) var inflightRequests: [Endpoint<Target>: [Moya.Completion]] = [:]
 
     /// Propagated to Alamofire as callback queue. If nil - the Alamofire default (as of their API in 2017 - the main queue) will be used.
     let callbackQueue: DispatchQueue?
@@ -101,7 +81,7 @@ open class MoyaProvider<Target: TargetType>: MoyaProviderType {
     }
 
     /// Returns an `Endpoint` based on the token, method, and parameters by invoking the `endpointClosure`.
-    open func endpoint(_ token: Target) -> Endpoint {
+    open func endpoint(_ token: Target) -> Endpoint<Target> {
         return endpointClosure(token)
     }
 
@@ -120,7 +100,7 @@ open class MoyaProvider<Target: TargetType>: MoyaProviderType {
     /// When overriding this method, take care to `notifyPluginsOfImpendingStub` and to perform the stub using the `createStubFunction` method.
     /// Note: this was previously in an extension, however it must be in the original class declaration to allow subclasses to override.
     @discardableResult
-    open func stubRequest(_ target: Target, request: URLRequest, callbackQueue: DispatchQueue?, completion: @escaping Moya.Completion, endpoint: Endpoint, stubBehavior: Moya.StubBehavior) -> CancellableToken {
+    open func stubRequest(_ target: Target, request: URLRequest, callbackQueue: DispatchQueue?, completion: @escaping Moya.Completion, endpoint: Endpoint<Target>, stubBehavior: Moya.StubBehavior) -> CancellableToken {
         let callbackQueue = callbackQueue ?? self.callbackQueue
         let cancellableToken = CancellableToken { }
         notifyPluginsOfImpendingStub(for: request, target: target)
@@ -169,23 +149,19 @@ public extension MoyaProvider {
     // Swift won't let us put the StubBehavior enum inside the provider class, so we'll
     // at least add some class functions to allow easy access to common stubbing closures.
 
-    /// Do not stub.
     public final class func neverStub(_: Target) -> Moya.StubBehavior {
         return .never
     }
 
-    /// Return a response immediately.
     public final class func immediatelyStub(_: Target) -> Moya.StubBehavior {
         return .immediate
     }
 
-    /// Return a response after a delay.
     public final class func delayedStub(_ seconds: TimeInterval) -> (Target) -> Moya.StubBehavior {
         return { _ in return .delayed(seconds: seconds) }
     }
 }
 
-/// A public function responsible for converting the result of a `URLRequest` to a Result<Moya.Response, MoyaError>.
 public func convertResponseToResult(_ response: HTTPURLResponse?, request: URLRequest?, data: Data?, error: Swift.Error?) ->
     Result<Moya.Response, MoyaError> {
         switch (response, data, error) {

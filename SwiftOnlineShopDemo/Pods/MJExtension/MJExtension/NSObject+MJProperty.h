@@ -20,10 +20,10 @@
 typedef void (^MJPropertiesEnumeration)(MJProperty *property, BOOL *stop);
 
 /** 将属性名换为其他key去字典中取值 */
-typedef NSDictionary * (^MJReplacedKeyFromPropertyName)(void);
+typedef NSDictionary * (^MJReplacedKeyFromPropertyName)();
 typedef id (^MJReplacedKeyFromPropertyName121)(NSString *propertyName);
 /** 数组中需要转换的模型类 */
-typedef NSDictionary * (^MJObjectClassInArray)(void);
+typedef NSDictionary * (^MJObjectClassInArray)();
 /** 用于过滤字典中的值 */
 typedef id (^MJNewValueFromOldValue)(id object, id oldValue, MJProperty *property);
 

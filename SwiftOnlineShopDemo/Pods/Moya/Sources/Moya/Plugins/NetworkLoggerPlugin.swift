@@ -13,11 +13,10 @@ public final class NetworkLoggerPlugin: PluginType {
     fileprivate let requestDataFormatter: ((Data) -> (String))?
     fileprivate let responseDataFormatter: ((Data) -> (Data))?
 
-    /// A Boolean value determing whether response body data should be logged.
+    /// If true, also logs response body data.
     public let isVerbose: Bool
     public let cURL: Bool
 
-    /// Initializes a NetworkLoggerPlugin.
     public init(verbose: Bool = false, cURL: Bool = false, output: ((_ separator: String, _ terminator: String, _ items: Any...) -> Void)? = nil, requestDataFormatter: ((Data) -> (String))? = nil, responseDataFormatter: ((Data) -> (Data))? = nil) {
         self.cURL = cURL
         self.isVerbose = verbose

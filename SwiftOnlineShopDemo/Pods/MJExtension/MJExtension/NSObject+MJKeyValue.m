@@ -177,11 +177,6 @@ static NSNumberFormatter *numberFormatter_;
                             }
                         }
                     }
-                } else if ([value isKindOfClass:[NSNumber class]] && propertyClass == [NSDecimalNumber class]){
-                    // 过滤 NSDecimalNumber类型
-                    if (![value isKindOfClass:[NSDecimalNumber class]]) {
-                        value = [NSDecimalNumber decimalNumberWithDecimal:[((NSNumber *)value) decimalValue]];
-                    }
                 }
                 
                 // value和property类型不匹配
@@ -201,9 +196,6 @@ static NSNumberFormatter *numberFormatter_;
     // 转换完毕
     if ([self respondsToSelector:@selector(mj_keyValuesDidFinishConvertingToObject)]) {
         [self mj_keyValuesDidFinishConvertingToObject];
-    }
-    if ([self respondsToSelector:@selector(mj_keyValuesDidFinishConvertingToObject:)]) {
-        [self mj_keyValuesDidFinishConvertingToObject:keyValues];
     }
     return self;
 }

@@ -128,7 +128,7 @@
                    options:(SDWebImageOptions)options
                  completed:(nullable SDExternalCompletionBlock)completedBlock;
 
-#pragma mark - Background Image
+#pragma mark - Background image
 
 /**
  * Get the current background image URL.

@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## Alamofire
 
-Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+Copyright (c) 2014-2017 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ THE SOFTWARE.
 
 ## MJExtension
 
-Copyright (c) 2013-2019 MJExtension (https://github.com/CoderMJLee/MJExtension)
+Copyright (c) 2013-2015 MJExtension (https://github.com/CoderMJLee/MJExtension)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -74,7 +74,7 @@ THE SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2014-present Artsy, Ash Furrow
+Copyright (c) 2017 Artsy, Ash Furrow
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -123,7 +123,7 @@ SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 maltsugar <173678978@qq.com>
+Copyright (c) 2015 maltsugar <173678978@qq.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

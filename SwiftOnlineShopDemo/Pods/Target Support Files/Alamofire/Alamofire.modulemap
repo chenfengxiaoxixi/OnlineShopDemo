@@ -1,4 +1,4 @@
-framework module Alamofire {
+module Alamofire {
   umbrella header "Alamofire-umbrella.h"
 
   export *
